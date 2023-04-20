@@ -54,8 +54,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a:focus,
+a:visited a:active {
+    outline: none;
+}
 
 html {
     /* font-family: Arial, Helvetica, sans-serif; */
@@ -99,9 +112,6 @@ span {
     display: inline-block;
 }
 
-:focus {
-    outline: none !important;
-}
 
 input {
     display: block;
@@ -116,7 +126,6 @@ input::placeholder {
 body {
     background: var(--while-10-color);
     scroll-behavior: smooth;
-    -webkit-tap-highlight-color: transparent;
 }
 
 /* ======================================== scrollbar style ======================================= */
