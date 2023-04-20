@@ -2045,3 +2045,10 @@ th {
 }
 
 /* ============================================= Page Product Info end ================================ */
+
+
+.header-action-bar:focus {
+    outline: none;
+    background-color: transparent;
+
+}

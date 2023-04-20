@@ -113,6 +113,7 @@ input::placeholder {
 body {
     background: var(--while-10-color);
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* ======================================== scrollbar style ======================================= */
