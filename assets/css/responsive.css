@@ -1,0 +1,58 @@
+@import url("base.css");
+/* Using a url */
+
+/* ======================================== RESPONSIVE ============================*/
+
+/* ================================= <= 992px ================================ */
+
+@media (max-width: 992px) {
+    nav .navbar-center {
+        display: none;
+    }
+
+    nav .navbar-right>a:last-child {
+        display: block !important;
+    }
+
+    nav .navbar-sticky {
+        padding: 10px 0;
+    }
+
+    .footer-center {
+        padding: 30px;
+    }
+
+    .shop-filters.screen-large {
+        display: none;
+    }
+
+    .filter-sort .fiter-sort-left>i.fa-bars {
+        display: block;
+    }
+
+    .filter-search {
+        display: none;
+    }
+
+}
+
+
+@media (min-width: 768px) {
+    /* .products-view-content .container .row div:nth-child(even) {
+        border-left: 1px solid #d8d0d0;
+        border-right: 1px solid #d8d0d0;
+    } */
+}
+
+
+
+/* ============================== <= 576px ============================== */
+@media (max-width: 576px) {
+    .footer-center {
+        padding: 16px;
+    }
+
+    .filter-tm .filter-tm-inner {
+        width: 90%;
+    }
+}

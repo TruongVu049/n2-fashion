@@ -1,0 +1,14 @@
+Run file by file path
+Chrome
+"C:/Program Files/Google/Chrome/Application/chrome.exe" --user-data-dir="C:/Chrome dev session" --disable-web-security
+Brave
+"C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe" --user-data-dir="C:/brave dev session" --disable-web-security
+
+
+--chrome o truong 
+"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe" --user-data-dir="C:/Chrome dev session" --disable-web-security
+
+"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe" --user-data-dir="C:/Chrome dev session" --disable-web-security
+
+
+
