@@ -99,6 +99,9 @@ span {
     display: inline-block;
 }
 
+:focus {
+    outline: none !important;
+}
 
 input {
     display: block;
