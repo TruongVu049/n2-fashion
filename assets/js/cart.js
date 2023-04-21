@@ -23,6 +23,7 @@ const clearELMProducts = () => {
 // ====================== Render Cart Start ==============================
 const renderCart = (infoProduct) => {
   let shop_products_bottom = $(".shop-products-bottom .row");
+  if (!shop_products_bottom) return;
   for (let cart of infoProduct) {
     shop_products_bottom.innerHTML += `
     <div class="col-lg-4 col-md-4 col-sm-6">
@@ -138,6 +139,7 @@ const selectSort = (typeSort) => {
 // =============================== Type Sort Start ==============================
 const typeSort = () => {
   let select = $(".filter-sort-right select");
+  if (!select) return;
   select.addEventListener("change", function () {
     console.log(select.value);
     selectSort(select.value);

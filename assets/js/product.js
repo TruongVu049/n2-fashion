@@ -187,7 +187,7 @@ const renderInfoProduct = () => {
                 <i class="fa-solid fa-minus"></i>
             </div>
             <div>
-                <strong>1123</strong>
+                <strong>1</strong>
             </div>
             <div class="couter-product-plug">
                 <i class="fa-solid fa-plus"></i>
@@ -198,7 +198,7 @@ const renderInfoProduct = () => {
     <div class="btn-list">
         <button data-id="${data.Id}" class="btn btn-sm">Thêm vào giỏ hàng</button>
         <button class="btn btn-m">Mua hàng
-          <a href="thanh-toan.html"></a>
+          <a href="gio-hang.html"></a>
         </button>
     </div>
   `;

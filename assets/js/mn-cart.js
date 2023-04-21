@@ -1,7 +1,6 @@
 import { DataProducts } from "./data.js";
 let $ = document.querySelector.bind(document);
 let $$ = document.querySelectorAll.bind(document);
-console.log(DataProducts);
 // =================================== Render Start ========================================
 const renderMnCart = (data) => {
   let cartList = $(".inner-cart-items");
@@ -32,6 +31,112 @@ const renderMnCart = (data) => {
   cartList.innerHTML = arr;
 };
 // =================================== Render End ========================================
+
+// ============================================
+const renderTableCart = (data) => {
+  let tableCart = $(".page-cart table");
+  if (!tableCart) return;
+  tableCart.innerHTML = `
+    <tr class="tr-title">
+        <th>Ảnh</th>
+        <th>Tên sản phẩm</th>
+        <th>Giá</th>
+        <th>Số lượng</th>
+        <th>Tổng</th>
+        <th>Xóa</th>
+    </tr>
+    `;
+  let arr = data
+    .map((elm) => {
+      return `
+          <tr class="tr-product">
+          <td>
+              <div>
+                  <img src="${elm.pd_image[0]}" alt="image">
+              </div>
+          </td>
+          <td>
+              <div>
+                  <h3>${elm.name}</h3>
+              </div>
+          </td>
+          <td>
+              <div>
+                  <strong>${elm.price}</strong>
+                  VNĐ
+              </div>
+          </td>
+          <td>
+              <div>
+                  <div class="couter-product">
+                      <div class="couter-product-minus">
+                          <i class="fa-solid fa-minus"></i>
+                      </div>
+                      <div>
+                          <strong>1</strong>
+                      </div>
+                      <div class="couter-product-plug">
+                          <i class="fa-solid fa-plus"></i>
+                      </div>
+                  </div>
+              </div>
+          </td>
+          <td>
+              <div>
+                  <strong>${elm.price}</strong>
+                  VNĐ
+              </div>
+          </td>
+          <td>
+              <div>
+                  <i data-id="${elm.Id}" class="fa-regular fa-trash-can remove-item"></i>
+              </div>
+          </td>
+      </tr>
+    `;
+    })
+    .join(" ");
+
+  tableCart.innerHTML += arr;
+  if (!arr) {
+    tableCart.innerHTML += `
+    <tr class="tr-product-none">
+        <td colspan="6">
+            <h4>Giỏ hàng trống</h4>
+        </td>
+    </tr>`;
+  }
+};
+
+// ============================================
+
+// ========================================
+const renderPay = (data) => {
+  let payLists = $(".total-product .li-product-list");
+  let payTotal = $(".total-product .li-total > div strong");
+  if (!payLists) return;
+  payLists.innerHTML = "";
+  payTotal.innerHTML = 0;
+  let sum = 0;
+  let arr = data
+    .map((elm) => {
+      sum += elm.price;
+      return `
+      <li class="li-product">
+      <div>
+              <h5>${elm.name}</h5>
+              <strong>${elm.price}
+                  <span>VNĐ</span>
+              </strong>
+          </div>
+      </li>`;
+    })
+    .join(" ");
+  payLists.innerHTML = arr;
+  payTotal.innerHTML = sum;
+};
+
+// ========================================
 
 // =============================
 const renderAmount = () => {
@@ -67,15 +172,17 @@ const getDataLc = () => {
       arr.push(JSON.parse(localStorage.getItem(key)));
     }
   }
-  console.log(arr);
   return arr;
 };
 
 // =================
 const initLS = () => {
   renderMnCart(getDataLc());
+  renderTableCart(getDataLc());
+  renderPay(getDataLc());
 };
 initLS();
+
 // ==================
 
 let btn = $("body");
@@ -83,17 +190,21 @@ btn.addEventListener("click", function (e) {
   if (e.target.classList.contains("btn-sm")) {
     addLocalStorage(e.target.dataset.id);
     renderMnCart(getDataLc());
+    renderTableCart(getDataLc());
+    renderPay(getDataLc());
     renderAmount();
   }
 });
 
 // ==================== Remove Cart Item Start =====================================
 const removeCartItem = () => {
-  let remove = $(".inner-cart-items");
+  let remove = $("body");
   remove.addEventListener("click", function (e) {
     if (e.target.classList.contains("remove-item")) {
       localStorage.removeItem(e.target.dataset.id);
       renderMnCart(getDataLc());
+      renderTableCart(getDataLc());
+      renderPay(getDataLc());
       renderAmount();
     }
   });

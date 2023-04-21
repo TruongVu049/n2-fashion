@@ -1534,9 +1534,12 @@ th {
     border-color: #d8d0d0;
 }
 
-.page-cart .total-product ul li>div h5,
+.page-cart .total-product ul li>div h5 {
+    font-size: var(--fs-18);
+}
+
 .page-cart .total-product ul li>div strong {
-    font-size: var(--fs-16);
+    font-size: var(--fs-24);
 }
 
 .page-cart .total-product .li-total strong {
@@ -2072,4 +2075,26 @@ th {
 
 .header-action.user .check-user.active {
     display: inline-block;
+}
+
+.li-product>div h5 {
+    width: 70%;
+}
+
+/* thanh toan */
+.title-success {
+    text-align: center;
+    background-color: #fff;
+    padding: 80px;
+}
+
+.title-success i {
+    color: #5cb85c;
+    font-size: var(--fs-72);
+}
+
+.title-success h2 {
+    font-size: var(--fs-30);
+    color: var(--title-l-color);
+    padding-top: 60px;
 }
