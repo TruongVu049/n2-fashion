@@ -18,7 +18,7 @@ const renderMnCart = (data) => {
             </div>
             <div>
                 <h4>${elm.name}
-                    <a href="thongtinsanpham.html"></a>
+                    <a href="thongtinsanpham.html?id=${elm.Id}"></a>
                 </h4>
                 <strong>${elm.price}</strong> VNĐ
             </div>
@@ -37,7 +37,14 @@ const renderMnCart = (data) => {
 const renderAmount = () => {
   let span = $(".navbar-right .cart span");
   span.innerHTML = "";
-  span.innerHTML = localStorage.length;
+  let sum = 0;
+  let keys = Object.keys(localStorage);
+  for (let key of keys) {
+    if (key.length == 3 && key.startsWith("0")) {
+      sum++;
+    }
+  }
+  span.innerHTML = sum;
 };
 renderAmount();
 // =============================
@@ -56,7 +63,9 @@ const getDataLc = () => {
   let arr = [];
   let keys = Object.keys(localStorage);
   for (let key of keys) {
-    arr.push(JSON.parse(localStorage.getItem(key)));
+    if (key.length == 3 && key.startsWith("0")) {
+      arr.push(JSON.parse(localStorage.getItem(key)));
+    }
   }
   console.log(arr);
   return arr;
