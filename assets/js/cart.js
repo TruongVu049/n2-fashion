@@ -45,7 +45,7 @@ const renderCart = (infoProduct) => {
                     VNĐ
                 </span>
                 <div class="add-to-cart">
-                    <button class="btn btn-sm">Thêm vào giỏ hàng</button>
+                    <button data-id="${cart.Id}" class="btn btn-sm">Thêm vào giỏ hàng</button>
                 </div>
                 <a href="thongtinsanpham.html?id=${cart.Id}"></a>
             </div>
@@ -59,14 +59,11 @@ const renderCart = (infoProduct) => {
 // ========================== Check Page Render Start =======================
 const checkPageRender = () => {
   const urlParams = location.pathname;
-  if(urlParams.includes("sanpham-nam.html"))
-  {
+  if (urlParams.includes("sanpham-nam.html")) {
     return "male";
-  }
-  else if(urlParams.includes("sanpham-nu.html")){
-    return "female"
-  }
-  else {
+  } else if (urlParams.includes("sanpham-nu.html")) {
+    return "female";
+  } else {
     return "all";
   }
 };
@@ -91,7 +88,6 @@ const getDataTypeProducts = () => {
     return dataCart;
   }
 };
-
 
 // ========================== Get Data Type Products End ============================
 
@@ -151,33 +147,31 @@ typeSort();
 // =============================== Type Sort End ==============================
 
 // ========================= Custom Range Input Start ===================================
-const customRangeInput = ()=>{
+const customRangeInput = () => {
   let rangeMax = $(".range-max");
   let rangeMin = $(".range-min");
   let outputRangeMin = $(".output-price-left");
   let outputRangeMax = $(".output-price-right");
   outputRangeMin.innerHTML = rangeMin.value;
   outputRangeMax.innerHTML = rangeMax.value;
-  rangeMin.addEventListener("input", function(){
+  rangeMin.addEventListener("input", function () {
     // if((rangeMin.value + 10000) >= rangeMax.value)
     // {
     //   rangeMax.value += 100;
     // }
     outputRangeMin.innerHTML = rangeMin.value;
-  })
-  rangeMax.addEventListener("input", function(){
+  });
+  rangeMax.addEventListener("input", function () {
     outputRangeMax.innerHTML = rangeMax.value;
-  })
-}
+  });
+};
 customRangeInput();
 
 // ========================= Custom Range Input End ===================================
 
-
-
 // =============================== Range Input Start ============================
 // const rangeInput  =()=> {
-  
+
 //   let outputRangeMin = $(".output-price-left");
 //   let outputRangeMax = $(".output-price-right");
 //   rangeMin.addEventListener('input', function(){
@@ -207,38 +201,35 @@ checkboxSearch();
 // ================================= Checkbox Search End =====================================
 
 // =============================== Render Filter Tag Start ==============
-const renderfilterTag = (dataFilter)=>{
+const renderfilterTag = (dataFilter) => {
   let filterApply = $(".filter-apply");
   // dataFilter.splice(dataFilter.length - 2, 2);
-  let data = dataFilter.map((e)=>{
+  let data = dataFilter.map((e) => {
     return `<div class="filter-apply-tag">
                 <span>${e}</span>
                 <i class="fa-solid fa-xmark"></i>
             </div>
-    `
+    `;
   });
-  data.join('');
-  filterApply.innerHTML+= data;
-}
+  data.join("");
+  filterApply.innerHTML += data;
+};
 // =============================== Render Filter Tag End ==============
 
 // ============================== Render Filer Sort Start ==============
-const renderFilterSort = (dataFilter)=>{
+const renderFilterSort = (dataFilter) => {
   const data = getDataTypeProducts();
-  for(let x of dataFilter)
-  {
+  for (let x of dataFilter) {
     console.log(x);
   }
-}
-
+};
 
 // ============================== Render Filer Sort Start ==============
 
 // ========================================= Filter Submit Start ===========================
 const filterSubmit = () => {
   let btnSubmit = $$(".apply-filters button.btn.btn-m");
-  for(let i = 0; i < btnSubmit.length; i++)
-  {
+  for (let i = 0; i < btnSubmit.length; i++) {
     btnSubmit[i].addEventListener("click", function () {
       let dataFilter = checkboxSearch();
       renderfilterTag(dataFilter);

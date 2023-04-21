@@ -142,7 +142,7 @@ function productsTab() {
                             VNĐ
                         </span>
                         <div class="add-to-cart">
-                            <button class="btn btn-sm">Thêm vào giỏ hàng</button>
+                            <button data-id="024" class="btn btn-sm">Thêm vào giỏ hàng</button>
                         </div>
                         <a href="thongtinsanpham.html?id=024"></a>
                     </div>
@@ -169,7 +169,7 @@ function productsTab() {
                             VNĐ
                         </span>
                         <div class="add-to-cart">
-                            <button class="btn btn-sm">Thêm vào giỏ hàng</button>
+                            <button data-id="025" class="btn btn-sm">Thêm vào giỏ hàng</button>
                         </div>
                         <a href="thongtinsanpham.html?id=025"></a>
                     </div>
@@ -196,7 +196,7 @@ function productsTab() {
                             VNĐ
                         </span>
                         <div class="add-to-cart">
-                            <button class="btn btn-sm">Thêm vào giỏ hàng</button>
+                            <button data-id="026" class="btn btn-sm">Thêm vào giỏ hàng</button>
                         </div>
                         <a href="thongtinsanpham.html?id=026"></a>
                     </div>
@@ -235,7 +235,7 @@ function productsTab() {
                             VNĐ
                         </span>
                         <div class="add-to-cart">
-                            <button class="btn btn-sm">Thêm vào giỏ hàng</button>
+                            <button data-id="028" class="btn btn-sm">Thêm vào giỏ hàng</button>
                         </div>
                         <a href="thongtinsanpham.html?id=028"></a>
                     </div>
@@ -261,7 +261,7 @@ function productsTab() {
                             VNĐ
                         </span>
                         <div class="add-to-cart">
-                            <button class="btn btn-sm">Thêm vào giỏ hàng</button>
+                            <button data-id="030" class="btn btn-sm">Thêm vào giỏ hàng</button>
                         </div>
                         <a href="thongtinsanpham.html?id=030"></a>
                     </div>
@@ -287,7 +287,7 @@ function productsTab() {
                             VNĐ
                         </span>
                         <div class="add-to-cart">
-                            <button class="btn btn-sm">Thêm vào giỏ hàng</button>
+                            <button data-id="031" class="btn btn-sm">Thêm vào giỏ hàng</button>
                         </div>
                         <a href="thongtinsanpham.html?id=031"></a>
                     </div>

@@ -80,7 +80,7 @@ const renderProvide = (datas, data, element) => {
                     VNĐ
                 </span>
                 <div class="add-to-cart">
-                    <button class="btn btn-sm">Thêm vào giỏ hàng</button>
+                    <button data-id="${elm.Id}" class="btn btn-sm">Thêm vào giỏ hàng</button>
                 </div>
                 <a href="thongtinsanpham.html?id=${elm.Id}"></a>
             </div>
@@ -125,7 +125,7 @@ const renderRelate = (datas, data, element) => {
                     VNĐ
                 </span>
                 <div class="add-to-cart">
-                    <button class="btn btn-sm">Thêm vào giỏ hàng</button>
+                    <button data-id="${elm.Id}" class="btn btn-sm">Thêm vào giỏ hàng</button>
                 </div>
                 <a href="thongtinsanpham.html?id=${elm.Id}"></a>
             </div>
@@ -196,7 +196,7 @@ const renderInfoProduct = () => {
     </div>
 
     <div class="btn-list">
-        <button class="btn btn-sm">Thêm vào giỏ hàng</button>
+        <button data-id="${data.Id}" class="btn btn-sm">Thêm vào giỏ hàng</button>
         <button class="btn btn-m">Mua hàng
           <a href="thanh-toan.html"></a>
         </button>
