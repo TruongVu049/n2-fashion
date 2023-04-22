@@ -147,11 +147,12 @@ function renderHeader() {
         </div>
     </div>`;
   let namePage = location.pathname;
-  namePage = namePage.slice(1);
+  namePage = namePage.split(/[/]/);
   let navbar_center = document.querySelectorAll(".navbar-center ul li a");
   for (let i of navbar_center) {
     let temp = i.getAttribute("href");
-    if (i.getAttribute("href").includes(namePage)) i.classList.add("active");
+    if (i.getAttribute("href").includes(namePage[namePage.length - 1]))
+      i.classList.add("active");
   }
 }
 
