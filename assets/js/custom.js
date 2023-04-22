@@ -242,31 +242,31 @@ function productsTab() {
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="shop-products-card">
-                    <div class="products-card-thumb">
-                        <img src="assets/image/img_030-1.jfif" alt="">
-                    </div>
-                    <div class="products-card-content">
-                        <h4 class="provide">adidas</h4>
-                        <h5 class="name">adidas Phong cách sống Giày Superstar Unisex trắng EG4958</h5>
-                        <div class="ratings">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <span class="price">
-                            <strong>2600000</strong>
-                            VNĐ
-                        </span>
-                        <div class="add-to-cart">
-                            <button data-id="030" class="btn btn-sm">Thêm vào giỏ hàng</button>
-                        </div>
-                        <a href="thongtinsanpham.html?id=030"></a>
-                    </div>
-                </div>
+        <div class="shop-products-card">
+            <div class="products-card-thumb">
+                <img src="assets/image/img_039-1.jfif" alt="">
             </div>
+            <div class="products-card-content">
+                <h4 class="provide">converse</h4>
+                <h5 class="name">CONVERSE - Nón bucket unisex Reversible 24563-A04-TUQS_BLUE</h5>
+                <div class="ratings">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <span class="price">
+                    <strong>550000</strong>
+                    VNĐ
+                </span>
+                <div class="add-to-cart">
+                    <button data-id="039" class="btn btn-sm">Thêm vào giỏ hàng</button>
+                </div>
+                <a href="thongtinsanpham.html?id=039"></a>
+            </div>
+        </div>
+    </div>
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="shop-products-card">
                     <div class="products-card-thumb">

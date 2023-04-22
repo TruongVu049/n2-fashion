@@ -114,9 +114,12 @@ const renderTableCart = (data) => {
 const renderPay = (data) => {
   let payLists = $(".total-product .li-product-list");
   let payTotal = $(".total-product .li-total > div strong");
+  let payCart = $(".inner-cart-price strong");
   if (!payLists) return;
-  payLists.innerHTML = "";
-  payTotal.innerHTML = 0;
+  payCart.innerHTML = "0";
+  payLists.innerHTML = "0";
+  // payTotal.innerText = 0;
+  console.log(payTotal.textContent);
   let sum = 0;
   let arr = data
     .map((elm) => {
@@ -133,7 +136,8 @@ const renderPay = (data) => {
     })
     .join(" ");
   payLists.innerHTML = arr;
-  payTotal.innerHTML = sum;
+  payTotal.innerText = sum;
+  payCart.innerHTML = sum + ` <span> VNĐ</span>`;
 };
 
 // ========================================
