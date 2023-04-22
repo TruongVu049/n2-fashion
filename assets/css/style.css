@@ -2094,6 +2094,10 @@ th {
     width: 70%;
 }
 
+.li-product>div strong {
+    text-align: right;
+}
+
 /* thanh toan */
 .title-success {
     text-align: center;

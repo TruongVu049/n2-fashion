@@ -221,18 +221,19 @@ width: 108px; height: 28px; -->
                 <div class="row">
                     <div class="col-12">
                         <div class="page-cart">
-                            <table>
-                                <!-- table head -->
-                                <tr class="tr-title">
-                                    <th>Ảnh</th>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Giá</th>
-                                    <th>Số lượng</th>
-                                    <th>Tổng</th>
-                                    <th>Xóa</th>
-                                </tr>
-                                <!-- table center -->
-                                <!--                                 
+                            <div class="table">
+                                <table>
+                                    <!-- table head -->
+                                    <tr class="tr-title">
+                                        <th>Ảnh</th>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Giá</th>
+                                        <th>Số lượng</th>
+                                        <th>Tổng</th>
+                                        <th>Xóa</th>
+                                    </tr>
+                                    <!-- table center -->
+                                    <!--                                 
                                 <tr class="tr-product">
                                     <td>
                                         <div>
@@ -322,9 +323,10 @@ width: 108px; height: 28px; -->
                                     </td>
                                 </tr> -->
 
-                                <!-- ================ Khi Gio Hang Khong Co San Pham ============= -->
+                                    <!-- ================ Khi Gio Hang Khong Co San Pham ============= -->
 
-                            </table>
+                                </table>
+                            </div>
                             <div class="total-product">
                                 <div class="container">
                                     <div class="row">
@@ -491,13 +493,8 @@ width: 108px; height: 28px; -->
     <script src="assets/js/custom.js"></script>
     <script type="module" src="assets/js/mn-cart.js"></script>
 
-    <script>
-        window.addEventListener('load', function () {
-            console.log("Đã tải xong");
-            let loading = document.querySelector(".loading");
-            loading.style.display = "none";
-        })
-    </script>
+    <script src="assets/js/loading.js"></script>
+
 </body>
 
 </html>

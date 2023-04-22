@@ -38,14 +38,35 @@
         margin-bottom: 20px;
     }
 
+    .page-cart .table {
+        overflow-x: scroll;
+        padding: 0 4px
+    }
+
+    .page-cart .table table {
+        width: 800px;
+    }
+
+
 }
 
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+
     /* .products-view-content .container .row div:nth-child(even) {
         border-left: 1px solid #d8d0d0;
         border-right: 1px solid #d8d0d0;
     } */
+
+    .page-cart .total-product ul li>div h5 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .page-cart .total-product ul li>div strong,
+    .page-cart .total-product ul li>div span {
+        font-size: 18px;
+    }
 }
 
 
