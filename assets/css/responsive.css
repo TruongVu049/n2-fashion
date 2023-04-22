@@ -80,4 +80,9 @@
     .filter-tm .filter-tm-inner {
         width: 90%;
     }
+
+    .cart-products .inner-cart,
+    .mobile-menu .mobile-menu-inner {
+        width: 90%;
+    }
 }

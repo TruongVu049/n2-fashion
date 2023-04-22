@@ -193,6 +193,7 @@ const checkboxSearch = () => {
       x.checked = false;
     }
   }
+
   let rangeMax = $(".range-min");
   let rangeMin = $(".range-max");
   arr.push(rangeMax.value);
@@ -202,28 +203,41 @@ const checkboxSearch = () => {
 checkboxSearch();
 // ================================= Checkbox Search End =====================================
 
+// ====================================
+const clearFilterTags = () => {
+  $(".filter-apply").innerHTML = "";
+};
+
 // =============================== Render Filter Tag Start ==============
 const renderfilterTag = (dataFilter) => {
   let filterApply = $(".filter-apply");
   // dataFilter.splice(dataFilter.length - 2, 2);
-  let data = dataFilter.map((e) => {
-    return `<div class="filter-apply-tag">
+  let data = dataFilter
+    .map((e) => {
+      return `<div class="filter-apply-tag">
                 <span>${e}</span>
                 <i class="fa-solid fa-xmark"></i>
             </div>
     `;
-  });
-  data.join("");
+    })
+    .join(" ");
   filterApply.innerHTML += data;
 };
 // =============================== Render Filter Tag End ==============
 
 // ============================== Render Filer Sort Start ==============
 const renderFilterSort = (dataFilter) => {
-  const data = getDataTypeProducts();
-  for (let x of dataFilter) {
-    console.log(x);
-  }
+  let price = dataFilter.splice(dataFilter.length - 2, 2);
+  let lengthData = dataFilter.length;
+  let data = getDataTypeProducts();
+  data = data.filter((item) => {
+    for (let i of dataFilter) {
+      if (item.type == i || item.sex == i) {
+        if (item.price >= price[0] && item.price < price[1]) return item;
+      }
+    }
+  });
+  return data;
 };
 
 // ============================== Render Filer Sort Start ==============
@@ -233,9 +247,13 @@ const filterSubmit = () => {
   let btnSubmit = $$(".apply-filters button.btn.btn-m");
   for (let i = 0; i < btnSubmit.length; i++) {
     btnSubmit[i].addEventListener("click", function () {
+      clearFilterTags();
       let dataFilter = checkboxSearch();
       renderfilterTag(dataFilter);
-      renderFilterSort(dataFilter);
+      clearELMProducts();
+      renderCart(renderFilterSort(dataFilter));
+      let sl = $$(".filter-sort-right select option");
+      sl[0].selected = true;
       // remove open filter
       let filter_tm = $(".filter-tm");
       filter_tm.classList.remove("open");

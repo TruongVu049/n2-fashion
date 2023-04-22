@@ -53,7 +53,7 @@ const renderProvide = (datas, data, element) => {
   let count = 1;
   let arr = datas
     .filter((elm, index) => {
-      if (elm.provide === data.provide && count <= 4) {
+      if (elm.provide === data.provide && elm.Id != data.Id && count <= 4) {
         count++;
         return elm;
       }
