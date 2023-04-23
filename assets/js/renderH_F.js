@@ -206,9 +206,9 @@ function rederFooter() {
         <div class="row justify-content-center align-items-start no-gutters">
             <div class="col-lg-3 col-sm-6">
                 <div class="footer-center-centent">
-                    <h4>Về DESTRY</h4>
+                    <h4>Về TLA</h4>
                     <p>Luôn đi theo tiêu chí giúp các nàng cảm thấy thoải mái và tự tin khi diện. Thật tuyệt vời
-                        nếu mỗi ngày đều xinh đẹp! ENVY cảm ơn quý khách đã tin yêu sản phẩm. Chúc bạn có ngày
+                        nếu mỗi ngày đều xinh đẹp! TLA cảm ơn quý khách đã tin yêu sản phẩm. Chúc bạn có ngày
                         mua sắm thật thoải mái.
                     </p>
                 </div>
@@ -218,11 +218,11 @@ function rederFooter() {
                     <h4>Thông tin liên hệ</h4>
                     <ul>
                         <li><strong>Địa chỉ: </strong>
-                            HỘ KINH DOANH ENVY (218-220 Quang Trung, Phường 10, Quận Gò Vấp, TP. Hồ Chí Minh)
+                            140 Lê Trọng Tấn, Tây Thạnh, Tân Phú, Thành phố Hồ Chí Minh, Việt Nam
                         </li>
                         <li><strong>Điện thoại: </strong>090 789 3879</li>
                         <li><strong>THời gian làm việc: </strong>08h00 - 22h00</li>
-                        <li><strong>Email: </strong>asdadadasdd@gmail.com</li>
+                        <li><strong>Email: </strong>tla@gmail.com</li>
                     </ul>
                 </div>
             </div>
