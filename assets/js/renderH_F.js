@@ -154,10 +154,6 @@ function renderHeader() {
     if (i.getAttribute("href").includes(namePage[namePage.length - 1]))
       i.classList.add("active");
   }
-  if ((location.pathname = "/n2-fashion/")) {
-    navbar_center[0].classList.add("active");
-    navbar_center[6].classList.add("active");
-  }
 }
 
 function rederFooter() {
