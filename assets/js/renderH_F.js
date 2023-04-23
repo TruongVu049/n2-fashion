@@ -149,13 +149,12 @@ function renderHeader() {
   let namePage = location.pathname;
   namePage = namePage.split(/[/]/);
   let navbar_center = document.querySelectorAll(".navbar-center ul li a");
-  if (namePage.length > 1) {
-    for (let i of navbar_center) {
-      let temp = i.getAttribute("href");
-      if (i.getAttribute("href").includes(namePage[namePage.length - 1]))
-        i.classList.add("active");
-    }
-  } else if ((namePage[0] = "n2-fashion")) {
+
+  for (let i of navbar_center) {
+    if (i.getAttribute("href").includes(namePage[namePage.length - 1]))
+      i.classList.add("active");
+  }
+  if ((location.pathname = "/n2-fashion/")) {
     navbar_center[0].classList.add("active");
     navbar_center[6].classList.add("active");
   }
