@@ -18,10 +18,12 @@
     <!-- ================== style.css =============== -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <link rel="stylesheet" href="assets/css/lienhe.css">
-
-    <title>Liên Hệ</title>
+    <!-- ================== responsive =================== -->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <title>Trang Chủ</title>
 </head>
+<!-- https://template.hasthemes.com/destry/destry/assets/images/logo/logo.png
+width: 108px; height: 28px; -->
 
 <body>
 
@@ -44,267 +46,162 @@
 
     <!-- =========================== HEADER ===================================== -->
     <header>
-        <!-- ================== Navbar ================== -->
-        <nav>
-            <div class="container">
-                <div class="navbar-sticky">
-                    <div class="navbar-left" style="margin-bottom: 10px;">
-                        <a href="index.html">
-                            <img style="" src="assets/favicon/logo-s.png" alt="logo">
-                        </a>
-                    </div>
-                    <div class="navbar-center">
-                        <ul>
-                            <li><a href="index.html">trang chủ</a></li>
-                            <li><a href="sanpham.html?page=all">sản phẩm</a></li>
-                            <li><a href="sanpham-nam.html?page=male">nam</a></li>
-                            <li><a href="sanpham-nu.html?page=female">nữ</a></li>
-                            <li><a href="blog.html">blog</a></li>
-                            <li><a class="active" href="lienhe.html">liên hệ</a></li>
-                        </ul>
-                    </div>
-                    <div class="navbar-right">
-                        <a href="login.html" class="header-action user">
-                            <span class="check-user"></span>
-                            <i class="fa-regular fa-user"></i>
-                        </a>
-                        <a href="javascript:void(0)" class="header-action cart">
 
-                            <i class="fa-solid fa-cart-shopping">
-                                <span>12</span>
-                            </i>
-                        </a>
-                        <a href="javascript:void(0)" class="header-action-bar">
-                            <i class="fa-solid fa-bars"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+    </header>
 
-
-        <!-- ==================== MOBILE MENU ================================= -->
-        <div class="mobile-menu">
-            <div class="overlay">
-
-            </div>
-            <div class="mobile-menu-inner">
-                <div class="mobile-menu-close">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-
-                <div class="mobile-menu-links">
+    <main>
+        <!-- ========================= Breadcrumb Start =========================-->
+        <section>
+            <div class="breadcrumb-area">
+                <h2>Liên Hệ</h2>
+                <div class="breadcrumb-area-content">
                     <ul>
-                        <li><a href="index.html">trang chủ</a></li>
-                        <li><a href="sanpham.html?page=all">sản phẩm</a></li>
-                        <li><a href="sanpham-nam.html?page=male">nam</a></li>
-                        <li><a href="sanpham-nu.html?page=female">nữ</a></li>
-                        <li><a href="blog.html">blog</a></li>
-                        <li><a class="active" href="lienhe.html">liên hệ</a></li>
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="javascript:void(0)">Liên Hệ</a></li>
                     </ul>
                 </div>
             </div>
-        </div>
+        </section>
+        <!-- ========================= Breadcrumb End =========================-->
 
-        <!-- ======================= Cart Products ============== -->
-        <div class="cart-products">
-            <div class="overlay">
-
-            </div>
-            <div class="inner-cart">
-                <div class="close-cart-products">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-                <div class="inner-cart-top">
-                    <h3>Giỏ Hàng</h3>
-                    <div class="inner-cart-items">
-                        <div class="inner-items">
-                            <div>
-                                <a href="thongtinsanpham.html">
-                                    <img src="https://cf.shopee.vn/file/vn-11134207-23030-fhot1hcfqwovf3_tn" alt="">
-                                </a>
-                            </div>
-                            <div>
-                                <h4>Brother Hoddies in Grey
-                                    <a href="thongtinsanpham.html"></a>
-                                </h4>
-                                <strong>1.234.567</strong> VNĐ
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-trash"></i>
-                            </div>
+        <div class="contact-page section section-margin">
+            <div class="container">
+                <div class="row mb-n10">
+                    <div class="col-12 col-lg-8 mb-10">
+                        <!-- Section title start -->
+                        <div class="section-title aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+                            <h2 class="title pb-3">GỬI PHẢN HỒI</h2>
+                            <span></span>
+                            <div class="title-border-bttom"></div>
                         </div>
-                        <div class="inner-items">
-                            <div>
-                                <a href="thongtinsanpham.html">
-                                    <img src="https://down-vn.img.susercontent.com/file/8e8402f8e2aa2b8d1634bb9ec99e0f4b_tn"
-                                        alt="">
-                                </a>
-                            </div>
-                            <div>
-                                <h4>Brother Hoddies in Grey
-                                    <a href="thongtinsanpham.html"></a>
-
-                                </h4>
-                                <strong>1.234.567</strong> VNĐ
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-trash"></i>
-                            </div>
+                        <!-- Section title end -->
+                        <!-- Contact form wrapper start -->
+                        <div class="contact-form-wrapper contact-form">
+                            <form action="assets/php/destry.php" id="contact-form" method="post">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="input-item mb-4">
+                                                    <input class="input-item" type="email" placeholder="Họ Tên *"
+                                                        name="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-item mb-4">
+                                                    <input class="input-item" type="email" placeholder="Email *"
+                                                        name="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="input-item mb-4">
+                                                    <input class="input-item" type="text" placeholder="Tiêu Dề *"
+                                                        name="subject">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="input-item mb-8">
+                                                    <textarea class="textarea-item" name="message"
+                                                        placeholder="Nội Dung"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" id="submit" name="submit"
+                                                    class="btn btn-m ">Gửi</button>
+                                            </div>
+                                            <p class="col-8 form-message mb-0"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <p class="form-message"></p>
                         </div>
-                        <div class="inner-items">
-                            <div>
-                                <a href="thongtinsanpham.html">
-                                    <img src="https://down-vn.img.susercontent.com/file/6601dcdeba4fe51713c5d78635b6a826_tn"
-                                        alt="">
-                                </a>
+                        <!-- Contact form wrapper end -->
+                    </div>
+                    <div class="col-12 col-lg-4 mb-10">
+                        <!-- section title start -->
+                        <div class="section-title contact-margin-top">
+                            <h2 class="title pb-3">Thông Tin Liên Lạc</h2>
+                            <span></span>
+                            <div class="title-border-bottom"></div>
+                        </div>
+                        <!-- section title end -->
+                        <!-- contact information wrapper start -->
+                        <div class="row contact-info-wrapper mb-n6">
+                            <div class="col-lg-12 col-md-6 col-sm-12 col-12 ">
+                                <div class="info-flex">
+                                    <div class="single-contact-icon">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div class="single-contact-title-content">
+                                        <h4 class="title">Địa Chỉ</h4>
+                                        <p class="desc-content">
+                                            "51/20 Lê Trọng Tấn"
+                                            <br>
+                                            "418 Lê Trọng Tấn"
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <h4>Brother Hoddies in Grey
-                                    <a href="thongtinsanpham.html"></a>
-                                </h4>
-                                <strong>1.234.567</strong> VNĐ
+                            <div class="col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="info-flex">
+                                    <div class="single-contact-icon">
+                                        <i class="fa-solid fa-mobile-screen-button"></i>
+                                    </div>
+                                    <div class="single-contact-title-content">
+                                        <h4 class="title">SĐT Liên Hệ</h4>
+                                        <p class="desc-content">
+                                            "SĐT: 0774429227"
+                                            <br>
+                                            "Fax: 123 456 789"
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <i class="fa-solid fa-trash"></i>
+                            <div class="col-lg-12 col-md-6 col-sm-12 col-12 ">
+                                <div class="info-flex">
+                                    <div class="single-contact-icon">
+                                        <i class="fa-regular fa-envelope"></i>
+                                    </div>
+                                    <div class="single-contact-title-content">
+                                        <h4 class="title">Liên Hệ Qua Email</h4>
+                                        <p class="desc-content">
+                                            <a href="#">Abcdefgh@gmail.com</a>
+                                            <a href="#">Ab123fgh@gmail.com</a>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                </div>
-                <div class="inner-cart-bottom">
-                    <div class="inner-cart-price">
-                        <h3>Tổng Tiền</h3>
-                        <strong>123.456
-                            <span>VNĐ</span>
-                        </strong>
-                    </div>
-                    <button class="btn view-">
-                        <a href="gio-hang.html"></a>
-                        XEM GIỎ HÀNG
-                    </button>
-                    <button class="btn shopnow-cart">
-                        <a href="thanh-toan.html"></a>
-                        MUA HÀNG
-                    </button>
                 </div>
             </div>
         </div>
-    </header>
 
-    <!-- Phần code viết ở đây -->
+        <!-- Contact us section end -->
+
+        <!-- Contact map start -->
+        <div class="section">
+            <!-- Google map area start -->
+            <div class="google-map-area w-100">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62712.548892307255!2d106.62261175853781!3d10.77032870322712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f2bb9fdd5c5%3A0x5dffe6586647193b!2sFelix%20luxury!5e0!3m2!1svi!2s!4v1682176756370!5m2!1svi!2s"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+        </div>
 
 
-
-
-
-
-
-
-
-
-
+    </main>
 
     <footer>
-        <div class="footer-top">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-nsx">
-                        <div>
-                            <img src="https://sixdo.vn/images/banners/original/limited-time2x-1624335793.png" alt="">
-                        </div>
-                        <h4>6 ngày đổi trả sản phẩm</h4>
-                        <p>Đổi trả sản phẩm trong 6 ngày</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-nsx">
-                        <div>
-                            <img src="https://sixdo.vn/images/banners/original/group-242x-1624335840.png" alt="">
-                        </div>
-                        <h4>hotline 1000 1100</h4>
-                        <p>8h00 - 21h00, T2 - CN nghỉ Tết Âm lịch</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-nsx">
-                        <div>
-                            <img src="https://sixdo.vn/images/banners/original/group-262x-1624335863.png" alt="">
-                        </div>
-                        <h4>hệ thống cửa hàng</h4>
-                        <p>Gần 60 cửa hàng trên toàn hệ thống</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-nsx">
-                        <div>
-                            <img src="https://sixdo.vn/images/banners/original/path-833-1623718758-1624336147.png"
-                                alt="">
-                        </div>
-                        <h4>VẬN CHUYỂN</h4>
-                        <p>Đồng giá 25K toàn quốc</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="footer-center">
-            <div class="container">
-                <div class="row justify-content-center align-items-start no-gutters">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-center-centent">
-                            <h4>Về DESTRY</h4>
-                            <p>Luôn đi theo tiêu chí giúp các nàng cảm thấy thoải mái và tự tin khi diện. Thật tuyệt vời
-                                nếu mỗi ngày đều xinh đẹp! ENVY cảm ơn quý khách đã tin yêu sản phẩm. Chúc bạn có ngày
-                                mua sắm thật thoải mái.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-center-centent">
-                            <h4>Thông tin liên hệ</h4>
-                            <ul>
-                                <li><strong>Địa chỉ: </strong>
-                                    HỘ KINH DOANH ENVY (218-220 Quang Trung, Phường 10, Quận Gò Vấp, TP. Hồ Chí Minh)
-                                </li>
-                                <li><strong>Điện thoại: </strong>090 789 3879</li>
-                                <li><strong>THời gian làm việc: </strong>08h00 - 22h00</li>
-                                <li><strong>Email: </strong>asdadadasdd@gmail.com</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-center-centent">
-                            <h4>Chính sách mua hàng</h4>
-                            <ul>
-                                <li>Đổi trả hàng lỗi trong vòng 7 ngày</li>
-                                <li>Ship COD toàn quốc</li>
-                                <li>Hỗ trợ 24/7 với các kênh chat, email & phone</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-center-centent">
-                            <h4>Kết nối với chúng tôi</h4>
-                            <div>
-                                <i class="fa-brands fa-instagram"></i>
-                                <i class="fa-brands fa-youtube"></i>
-                                <i class="fa-brands fa-twitter"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>© 2023 Destry Made width by AAAAAA.</p>
-        </div>
     </footer>
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/loading.js"></script>
 
+    <script src="assets/js/renderH_F.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script type="module" src="assets/js/mn-cart.js"></script>
+    <script src="assets/js/loading.js"></script>
 </body>
 
 </html>

@@ -18,10 +18,12 @@
     <!-- ================== style.css =============== -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <link rel="stylesheet" href="assets/css/blog.css">
-
-    <title>Blog</title>
+    <!-- ================== responsive =================== -->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <title>Trang Chủ</title>
 </head>
+<!-- https://template.hasthemes.com/destry/destry/assets/images/logo/logo.png
+width: 108px; height: 28px; -->
 
 <body>
 
@@ -44,263 +46,276 @@
 
     <!-- =========================== HEADER ===================================== -->
     <header>
-        <!-- ================== Navbar ================== -->
-        <nav>
-            <div class="container">
-                <div class="navbar-sticky">
-                    <div class="navbar-left" style="margin-bottom: 10px;">
-                        <a href="index.html">
-                            <img src="assets/favicon/logo-s.png" alt="logo">
-                        </a>
-                    </div>
-                    <div class="navbar-center">
-                        <ul>
-                            <li><a href="index.html">trang chủ</a></li>
-                            <li><a href="sanpham.html?page=all">sản phẩm</a></li>
-                            <li><a href="sanpham-nam.html?page=male">nam</a></li>
-                            <li><a href="sanpham-nu.html?page=female">nữ</a></li>
-                            <li><a class="active" href="blog.html">blog</a></li>
-                            <li><a href="lienhe.html">liên hệ</a></li>
-                        </ul>
-                    </div>
-                    <div class="navbar-right">
-                        <a href="login.html" class="header-action user">
-                            <span class="check-user"></span>
-                            <i class="fa-regular fa-user"></i>
-                        </a>
-                        <a href="javascript:void(0)" class="header-action cart">
 
-                            <i class="fa-solid fa-cart-shopping">
-                                <span>12</span>
-                            </i>
-                        </a>
-                        <a href="javascript:void(0)" class="header-action-bar">
-                            <i class="fa-solid fa-bars"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+    </header>
 
-
-        <!-- ==================== MOBILE MENU ================================= -->
-        <div class="mobile-menu">
-            <div class="overlay">
-
-            </div>
-            <div class="mobile-menu-inner">
-                <div class="mobile-menu-close">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-
-                <div class="mobile-menu-links">
+    <main>
+        <!-- ========================= Breadcrumb Start =========================-->
+        <section>
+            <div class="breadcrumb-area">
+                <h2>Blog</h2>
+                <div class="breadcrumb-area-content">
                     <ul>
-                        <li><a href="index.html">trang chủ</a></li>
-                        <li><a href="sanpham.html?page=all">sản phẩm</a></li>
-                        <li><a href="sanpham-nam.html?page=male">nam</a></li>
-                        <li><a href="sanpham-nu.html?page=female">nữ</a></li>
-                        <li><a class="active" href="blog.html">blog</a></li>
-                        <li><a href="lienhe.html">liên hệ</a></li>
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="javascript:void(0)">Blog</a></li>
                     </ul>
                 </div>
             </div>
-        </div>
+        </section>
+        <!-- ========================= Breadcrumb End =========================-->
+        <!-- ================================ Blog Page ===================================== -->
 
-        <!-- ======================= Cart Products ============== -->
-        <div class="cart-products">
-            <div class="overlay">
+        <!-- Blog Section Start -->
+        <div class=" blog-page section section-margin">
+            <div class="container">
 
-            </div>
-            <div class="inner-cart">
-                <div class="close-cart-products">
-                    <i class="fa-solid fa-xmark"></i>
+                <div class="row mb-n8">
+
+                    <div class="col-md-6 col-lg-4 mb-8" data-aos="fade-up" data-aos-delay="200">
+                        <!-- Single Blog Start -->
+                        <div class="blog-single-post-wrapper">
+                            <div class="blog-thumb">
+                                <a class="blog-overlay" href="#"><!--blog-details.html-->
+                                    <img src="assets/image/blog/1.jpg" alt="Blog Post">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="post-meta">
+                                    <span>By : <a href="#">Admin</a></span>
+                                    <span>14 Jul 2023</span>
+                                </div>
+                                <h3 class="title"><a href="#"><!--blog-details.html-->Một số bộ sưu tập mùa đông</a>
+                                </h3>
+                                <p>Một số mẫu quần áo mùa đông đẹp và ấm áp từ bộ sưu tập mới nhất của thương hiệu Zara.
+                                </p>
+                                <a href="#" class="link"><!--blog-details.html-->Đọc thêm</a>
+                            </div>
+                        </div>
+                        <!-- Single Blog End -->
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-8" data-aos="fade-up" data-aos-delay="300">
+                        <!-- Single Blog Start -->
+                        <div class="blog-single-post-wrapper">
+                            <div class="blog-thumb">
+                                <a class="blog-overlay" href="#"><!--blog-details.html-->
+                                    <img src="assets/image/blog/2.jpg" alt="Blog Post">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="post-meta">
+                                    <span>By : <a href="#">Admin</a></span>
+                                    <span>20 Feb 2023</span>
+                                </div>
+                                <h3 class="title"><a href="#"><!--blog-details.html-->Thời trang của tôi</a></h3>
+                                <p>Một số bộ thời trang có thể bạn thích. Đây là những bộ đồ phù hợp với mùa xuân và mùa
+                                    hè
+                                    sắp tới.</p>
+                                <a href="#" class="link"><!--blog-details.html-->Đọc thêm</a>
+                            </div>
+                        </div>
+                        <!-- Single Blog End -->
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-8" data-aos="fade-up" data-aos-delay="400">
+                        <!-- Single Blog Start -->
+                        <div class="blog-single-post-wrapper">
+                            <div class="blog-thumb">
+                                <a class="blog-overlay" href="#"><!--blog-details.html-->
+                                    <img src="assets/image/blog/3.jpg" alt="Blog Post">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="post-meta">
+                                    <span>By : <a href="#">Admin</a></span>
+                                    <span>18 Mar 2023</span>
+                                </div>
+                                <h3 class="title"><a href="#"><!--blog-details.html-->Nhà mốt hoàn hảo</a></h3>
+                                <p>Trong bài viết này, tôi sẽ giới thiệu cho bạn một số nhà mốt nổi tiếng và uy tín nhất
+                                    hiện nay.</p>
+                                <a href="#" class="link"><!--blog-details.html-->Đọc thêm</a>
+                            </div>
+                        </div>
+                        <!-- Single Blog End -->
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-8" data-aos="fade-up" data-aos-delay="200">
+                        <!-- Single Blog Start -->
+                        <div class="blog-single-post-wrapper">
+                            <div class="blog-thumb">
+                                <a class="blog-overlay" href="#"><!--blog-details.html-->
+                                    <img src="assets/image/blog/4.jpg" alt="Blog Post">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="post-meta">
+                                    <span>By : <a href="#">Admin</a></span>
+                                    <span>11 Jun 2023</span>
+                                </div>
+                                <h3 class="title"><a href="#"><!--blog-details.html-->Một số bộ sưu tập mùa đông</a>
+                                </h3>
+                                <p>Mùa đông là thời gian lý tưởng để thể hiện phong cách thời trang của bạn. Bạn có thể
+                                    kết
+                                    hợp nhiều loại trang phục và phụ kiện để tạo nên những bộ cánh ấn tượng.</p>
+                                <a href="#" class="link"><!--blog-details.html-->Đọc thêm</a>
+                            </div>
+                        </div>
+                        <!-- Single Blog End -->
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-8" data-aos="fade-up" data-aos-delay="300">
+                        <!-- Single Blog Start -->
+                        <div class="blog-single-post-wrapper">
+                            <div class="blog-thumb">
+                                <a class="blog-overlay" href="#"><!--blog-details.html-->
+                                    <img src="assets/image/blog/5.jpg" alt="Blog Post">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="post-meta">
+                                    <span>By : <a href="#">Admin</a></span>
+                                    <span>02 Apr 2023</span>
+                                </div>
+                                <h3 class="title"><a href="#"><!--blog-details.html-->Dép xỏ ngón quanh năm</a></h3>
+                                <p>Dù là mùa hè hay mùa đông, dép xỏ ngón đều có thể kết hợp với nhiều loại trang phục
+                                    khác
+                                    nhau để tạo nên phong cách riêng cho bạn.</p>
+                                <a href="#" class="link"><!--blog-details.html-->Đọc thêm</a>
+                            </div>
+                        </div>
+                        <!-- Single Blog End -->
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-8" data-aos="fade-up" data-aos-delay="400">
+                        <!-- Single Blog Start -->
+                        <div class="blog-single-post-wrapper">
+                            <div class="blog-thumb">
+                                <a class="blog-overlay" href="#"><!--blog-details.html-->
+                                    <img src="assets/image/blog/6.jpg" alt="Blog Post">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="post-meta">
+                                    <span>By : <a href="#">Admin</a></span>
+                                    <span>09 May 2023</span>
+                                </div>
+                                <h3 class="title"><a href="#"><!--blog-details.html-->Phong cách cho tâm hồn</a></h3>
+                                <p>Trong bài viết này, tôi sẽ chia sẻ với bạn một số mẹo để bạn có thể thể hiện bản thân
+                                    một
+                                    cách tự nhiên và thoải mái.</p>
+                                <a href="#" class="link"><!--blog-details.html-->Đọc thêm</a>
+                            </div>
+                        </div>
+                        <!-- Single Blog End -->
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-8" data-aos="fade-up" data-aos-delay="200">
+                        <!-- Single Blog Start -->
+                        <div class="blog-single-post-wrapper">
+                            <div class="blog-thumb">
+                                <a class="blog-overlay" href="#"><!--blog-details.html-->
+                                    <img src="assets/image/blog/7.jpg" alt="Blog Post">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="post-meta">
+                                    <span>By : <a href="#">Admin</a></span>
+                                    <span>13 Aug 2023</span>
+                                </div>
+                                <h3 class="title"><a href="#"><!--blog-details.html-->Xu hướng chỉ có ở đây</a></h3>
+                                <p>Nếu bạn đang tìm kiếm những xu hướng thời trang mới lạ cho mùa Xuân Hè 2023, bạn có
+                                    thể
+                                    tham khảo những gợi ý sau đây.</p>
+                                <a href="#" class="link"><!--blog-details.html-->Đọc thêm</a>
+                            </div>
+                        </div>
+                        <!-- Single Blog End -->
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-8" data-aos="fade-up" data-aos-delay="300">
+                        <!-- Single Blog Start -->
+                        <div class="blog-single-post-wrapper">
+                            <div class="blog-thumb">
+                                <a class="blog-overlay" href="#"><!--blog-details.html-->
+                                    <img src="assets/image/blog/8.jpg" alt="Blog Post">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="post-meta">
+                                    <span>By : <a href="#">Admin</a></span>
+                                    <span>15 Dec 2023</span>
+                                </div>
+                                <h3 class="title"><a href="#"><!--blog-details.html-->Phong cách quy mô nhỏ</a></h3>
+                                <p>Phong cách này là sự kết hợp giữa sự đơn giản và sáng tạo, giữa sự tinh tế và cá
+                                    tính.
+                                    Bạn có thể mix and match các món đồ với những phụ kiện độc đáo để tạo nên những bộ
+                                    cánh
+                                    ấn tượng.</p>
+                                <a href="#" class="link"><!--blog-details.html-->Đọc thêm</a>
+                            </div>
+                        </div>
+                        <!-- Single Blog End -->
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 mb-8" data-aos="fade-up" data-aos-delay="400">
+                        <!-- Single Blog Start -->
+                        <div class="blog-single-post-wrapper">
+                            <div class="blog-thumb">
+                                <a class="blog-overlay" href="#"><!--blog-details.html-->
+                                    <img src="assets/image/blog/9.jpg" alt="Blog Post">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="post-meta">
+                                    <span>By : <a href="#">Admin</a></span>
+                                    <span>26 Dec 2023</span>
+                                </div>
+                                <h3 class="title"><a href="#"><!--blog-details.html-->Vitamin thời trang</a></h3>
+                                <p>Đó là những món đồ mà bạn có thể kết hợp với nhiều trang phục khác nhau để tạo nên
+                                    phong
+                                    cách riêng của mình.</p>
+                                <a href="#" class="link"><!--blog-details.html-->Đọc thêm</a>
+                            </div>
+                        </div>
+                        <!-- Single Blog End -->
+                    </div>
                 </div>
-                <div class="inner-cart-top">
-                    <h3>Giỏ Hàng</h3>
-                    <div class="inner-cart-items">
-                        <div class="inner-items">
-                            <div>
-                                <a href="thongtinsanpham.html">
-                                    <img src="https://cf.shopee.vn/file/vn-11134207-23030-fhot1hcfqwovf3_tn" alt="">
-                                </a>
-                            </div>
-                            <div>
-                                <h4>Brother Hoddies in Grey
-                                    <a href="thongtinsanpham.html"></a>
-                                </h4>
-                                <strong>1.234.567</strong> VNĐ
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-trash"></i>
-                            </div>
-                        </div>
-                        <div class="inner-items">
-                            <div>
-                                <a href="thongtinsanpham.html">
-                                    <img src="https://down-vn.img.susercontent.com/file/8e8402f8e2aa2b8d1634bb9ec99e0f4b_tn"
-                                        alt="">
-                                </a>
-                            </div>
-                            <div>
-                                <h4>Brother Hoddies in Grey
-                                    <a href="thongtinsanpham.html"></a>
 
-                                </h4>
-                                <strong>1.234.567</strong> VNĐ
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-trash"></i>
+                <div class="row">
+
+                    <div style="margin: 0 auto;" class="shop-pavination">
+                        <div class="pavination-left">
+                            <i class="fa-solid fa-angles-left"></i>
+                        </div>
+                        <div class="pavination-center">
+                            <div class="pv-container-items">
+                                <div>
+                                    <a class="active" href="#">1</a>
+                                </div>
+                                <div>
+                                    <a href="#">2</a>
+                                </div>
+                                <div>
+                                    <a href="#">3</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="inner-items">
-                            <div>
-                                <a href="thongtinsanpham.html">
-                                    <img src="https://down-vn.img.susercontent.com/file/6601dcdeba4fe51713c5d78635b6a826_tn"
-                                        alt="">
-                                </a>
-                            </div>
-                            <div>
-                                <h4>Brother Hoddies in Grey
-                                    <a href="thongtinsanpham.html"></a>
-                                </h4>
-                                <strong>1.234.567</strong> VNĐ
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-trash"></i>
-                            </div>
+                        <div class="pavination-right">
+                            <i class="fa-solid fa-angles-right"></i>
                         </div>
                     </div>
 
                 </div>
-                <div class="inner-cart-bottom">
-                    <div class="inner-cart-price">
-                        <h3>Tổng Tiền</h3>
-                        <strong>123.456
-                            <span>VNĐ</span>
-                        </strong>
-                    </div>
-                    <button class="btn view-">
-                        <a href="gio-hang.html"></a>
-                        XEM GIỎ HÀNG
-                    </button>
-                    <button class="btn shopnow-cart">
-                        <a href="thanh-toan.html"></a>
-                        MUA HÀNG
-                    </button>
-                </div>
+
             </div>
         </div>
-    </header>
-
-
-    <!-- Phần code viết ở đây -->
+        <!-- Blog Section End -->
 
 
 
 
-
-
+    </main>
 
     <footer>
-        <div class="footer-top">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-nsx">
-                        <div>
-                            <img src="https://sixdo.vn/images/banners/original/limited-time2x-1624335793.png" alt="">
-                        </div>
-                        <h4>6 ngày đổi trả sản phẩm</h4>
-                        <p>Đổi trả sản phẩm trong 6 ngày</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-nsx">
-                        <div>
-                            <img src="https://sixdo.vn/images/banners/original/group-242x-1624335840.png" alt="">
-                        </div>
-                        <h4>hotline 1000 1100</h4>
-                        <p>8h00 - 21h00, T2 - CN nghỉ Tết Âm lịch</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-nsx">
-                        <div>
-                            <img src="https://sixdo.vn/images/banners/original/group-262x-1624335863.png" alt="">
-                        </div>
-                        <h4>hệ thống cửa hàng</h4>
-                        <p>Gần 60 cửa hàng trên toàn hệ thống</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-nsx">
-                        <div>
-                            <img src="https://sixdo.vn/images/banners/original/path-833-1623718758-1624336147.png"
-                                alt="">
-                        </div>
-                        <h4>VẬN CHUYỂN</h4>
-                        <p>Đồng giá 25K toàn quốc</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="footer-center">
-            <div class="container">
-                <div class="row justify-content-center align-items-start no-gutters">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-center-centent">
-                            <h4>Về DESTRY</h4>
-                            <p>Luôn đi theo tiêu chí giúp các nàng cảm thấy thoải mái và tự tin khi diện. Thật tuyệt vời
-                                nếu mỗi ngày đều xinh đẹp! ENVY cảm ơn quý khách đã tin yêu sản phẩm. Chúc bạn có ngày
-                                mua sắm thật thoải mái.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-center-centent">
-                            <h4>Thông tin liên hệ</h4>
-                            <ul>
-                                <li><strong>Địa chỉ: </strong>
-                                    HỘ KINH DOANH ENVY (218-220 Quang Trung, Phường 10, Quận Gò Vấp, TP. Hồ Chí Minh)
-                                </li>
-                                <li><strong>Điện thoại: </strong>090 789 3879</li>
-                                <li><strong>THời gian làm việc: </strong>08h00 - 22h00</li>
-                                <li><strong>Email: </strong>asdadadasdd@gmail.com</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-center-centent">
-                            <h4>Chính sách mua hàng</h4>
-                            <ul>
-                                <li>Đổi trả hàng lỗi trong vòng 7 ngày</li>
-                                <li>Ship COD toàn quốc</li>
-                                <li>Hỗ trợ 24/7 với các kênh chat, email & phone</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-center-centent">
-                            <h4>Kết nối với chúng tôi</h4>
-                            <div>
-                                <i class="fa-brands fa-instagram"></i>
-                                <i class="fa-brands fa-youtube"></i>
-                                <i class="fa-brands fa-twitter"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>© 2023 Destry Made width by AAAAAA.</p>
-        </div>
     </footer>
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/loading.js"></script>
 
+    <script src="assets/js/renderH_F.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script type="module" src="assets/js/mn-cart.js"></script>
+    <script src="assets/js/loading.js"></script>
 </body>
 
 </html>

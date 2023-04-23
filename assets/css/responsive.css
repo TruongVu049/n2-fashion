@@ -47,6 +47,9 @@
         width: 800px;
     }
 
+    .contact-margin-top {
+        margin-top: 60px;
+    }
 
 }
 
@@ -67,6 +70,8 @@
     .page-cart .total-product ul li>div span {
         font-size: 18px;
     }
+
+
 }
 
 
@@ -84,5 +89,33 @@
     .cart-products .inner-cart,
     .mobile-menu .mobile-menu-inner {
         width: 90%;
+    }
+}
+
+
+/* ---------------------- CONTACTS Page ================================== */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .section-margin {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .section-title {
+        margin-bottom: 50px;
+    }
+}
+
+/* =============================== BLog Page ============================== */
+@media only screen and (max-width: 767px),
+only screen and (min-width: 992px) and (max-width: 1199px),
+only screen and (min-width: 768px) and (max-width: 991px) {
+    .blog-page .blog-content .title {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .blog-page .blog-content .title {
+        font-size: 20px;
     }
 }

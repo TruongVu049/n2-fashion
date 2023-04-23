@@ -2115,3 +2115,233 @@ th {
     color: var(--title-l-color);
     padding-top: 60px;
 }
+
+
+
+/* ======================================= STYLE CONTACT PAGE START ================================================== */
+.contact-page.section-margin {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.contact-page .mb-n10 {
+    margin-bottom: -3.125rem !important;
+}
+
+.contact-page .section-title {
+    margin-bottom: 60px;
+}
+
+.contact-page .section-title .title {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 0;
+    color: #2e2e2e;
+    line-height: 1;
+}
+
+.contact-page .pb-3 {
+    padding-bottom: 0.9375rem !important;
+}
+
+.contact-page .section-title span {
+    content: "";
+    position: absolute;
+    background: #ff4545;
+    width: 100px;
+    height: 2px;
+}
+
+.contact-page .title-border-bottom {
+    border-bottom: 2px solid #ebebeb;
+}
+
+.contact-page .mb-4 {
+    margin-bottom: 1.25rem !important;
+}
+
+
+
+.contact-page .contact-form-wrapper .input-item input[type=text],
+.contact-page .contact-form-wrapper .input-item input[type=password],
+.contact-page .contact-form-wrapper .input-item input[type=email],
+.contact-page .contact-form-wrapper .input-item textarea {
+    background: #fff;
+    border: 1px solid #E8E8E8;
+    border-radius: 0;
+    height: 42px;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease 0s;
+    color: #212121;
+    text-decoration: none;
+    outline: 0;
+}
+
+.contact-page .contact-form .btn-m {
+    margin-top: 20px;
+}
+
+.contact-page .mb-n6 {
+    margin-bottom: -1.875rem !important;
+}
+
+.contact-page .single-contact-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.contact-page .single-contact-info .single-contact-icon {
+    margin-right: 20px;
+}
+
+.contact-page .single-contact-info .single-contact-icon i {
+    font-size: 26px;
+    color: #212121;
+}
+
+.contact-page .single-contact-info .single-contact-title-content .title {
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    color: #212121;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contact-page .single-contact-info .single-contact-title-content .desc-content {
+    font-size: 14px;
+}
+
+.contact-page .info-flex {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.contact-page .info-flex>div:first-child {
+    width: 10%;
+}
+
+.info-flex i {
+    font-size: 24px;
+}
+
+.contact-page .info-flex h4 {
+    padding-bottom: 6px;
+}
+
+.contact-page .info-flex:last-child {
+    /* margin-bottom: 0; */
+}
+
+/* ======================================= STYLE CONTACT PAGE END ================================================== */
+
+
+
+/* ================================== BLog Page Start ========================*/
+.blog-page .blog-content .post-meta {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    line-height: 1;
+    margin-top: 30px;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    color: #8c8c8c;
+    font-size: 14px;
+}
+
+.blog-page .blog-content .post-meta span:after {
+    content: "/";
+    padding: 0 5px;
+}
+
+.blog-page .blog-content .post-meta span:last-child:after {
+    display: none;
+}
+
+.blog-page .blog-content .post-meta span a {
+    color: #8c8c8c;
+}
+
+.blog-page .blog-content .post-meta span a:hover {
+    color: #ff4545;
+}
+
+.blog-page .blog-content .title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.16;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 12px;
+    font-family: "Montserrat", sans-serif;
+    color: #2e2e2e;
+}
+
+
+
+.blog-page .blog-content .title a {
+    color: #2e2e2e;
+}
+
+.blog-page .blog-content .title a:hover {
+    color: #ff4545;
+}
+
+.blog-page .blog-content p {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.blog-page .blog-content .btn {
+    font-size: 14px;
+    padding: 15px 25px;
+    font-weight: 600;
+}
+
+.blog-page .blog-single-post-wrapper .blog-overlay {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.blog-page .blog-single-post-wrapper .blog-overlay img {
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    width: 100%;
+}
+
+.blog-page .blog-single-post-wrapper:hover .blog-overlay img {
+    -webkit-transform: scale(1.1) rotate(1.2deg);
+    transform: scale(1.1) rotate(1.2deg);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.blog-page .blog-page .blog-content a.link {
+    color: #2e2e2e;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 18px;
+    transition: all 0.2s;
+}
+
+.blog-page .blog-content a.link:hover {
+    color: #ff4545;
+}
+
+.blog-page .post-meta>span {
+    display: flex;
+}
+
+
+/* ================================== BLog Page End ========================*/
