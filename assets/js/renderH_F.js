@@ -155,7 +155,7 @@ function renderHeader() {
       if (i.getAttribute("href").includes(namePage[namePage.length - 1]))
         i.classList.add("active");
     }
-  } else {
+  } else if ((namePage[0] = "n2-fashion")) {
     navbar_center[0].classList.add("active");
     navbar_center[6].classList.add("active");
   }
