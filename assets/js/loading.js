@@ -7,4 +7,3 @@ window.addEventListener("load", function () {
 });
 let btnNone = document.querySelector(".btn.shopnow-cart a");
 btnNone.setAttribute("href", "javascript:void(0)");
-console.log(btnNone);

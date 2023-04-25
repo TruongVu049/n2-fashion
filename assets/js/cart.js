@@ -116,8 +116,7 @@ const resetSelectSort = () => {
 // ========================= Select Sort Start ===================================
 const selectSort = (typeSort) => {
   clearELMProducts();
-  let dataCart = getDataTypeProducts().slice();
-
+  let dataCart = getDataTypeProducts();
   if (typeSort == "low-hight") {
     renderCart(
       dataCart.sort((x, y) => {
@@ -136,6 +135,12 @@ const selectSort = (typeSort) => {
 };
 // ========================= Select Sort End ===================================
 
+const inputCheckbox = () => {
+  let inputCB = $$("input]");
+  console.log(inputCB);
+};
+// inputCheckbox();
+
 // =============================== Type Sort Start ==============================
 const typeSort = () => {
   let select = $(".filter-sort-right select");
@@ -148,23 +153,43 @@ const typeSort = () => {
 typeSort();
 // =============================== Type Sort End ==============================
 
+// =========================== Remove Checked =====================================
+const removeChecked = () => {
+  let input = $$(".shop-input-type input");
+  for (let x of input) {
+    x.checked = false;
+  }
+};
+// =========================== Remove Checked =====================================
+
 // ========================= Custom Range Input Start ===================================
 const customRangeInput = () => {
-  let rangeMax = $(".range-max");
-  let rangeMin = $(".range-min");
-  let outputRangeMin = $(".output-price-left");
-  let outputRangeMax = $(".output-price-right");
-  outputRangeMin.innerHTML = rangeMin.value;
-  outputRangeMax.innerHTML = rangeMax.value;
-  rangeMin.addEventListener("input", function () {
-    // if((rangeMin.value + 10000) >= rangeMax.value)
-    // {
-    //   rangeMax.value += 100;
-    // }
-    outputRangeMin.innerHTML = rangeMin.value;
+  let rangeMax = $$(".range-max");
+  let rangeMin = $$(".range-min");
+  let outputRangeMin = $$(".output-price-left");
+  let outputRangeMax = $$(".output-price-right");
+
+  outputRangeMin[0].innerHTML = rangeMin[0].value;
+  outputRangeMax[0].innerHTML = rangeMax[0].value;
+
+  outputRangeMin[1].innerHTML = rangeMin[1].value;
+  outputRangeMax[1].innerHTML = rangeMax[1].value;
+
+  rangeMin.forEach((elm, index) => {
+    elm.addEventListener("input", function () {
+      rangeMin[0].value = elm.value;
+      rangeMin[1].value = elm.value;
+      outputRangeMin[0].innerHTML = elm.value;
+      outputRangeMin[1].innerHTML = elm.value;
+    });
   });
-  rangeMax.addEventListener("input", function () {
-    outputRangeMax.innerHTML = rangeMax.value;
+  rangeMax.forEach((elm, index) => {
+    elm.addEventListener("input", function () {
+      rangeMax[0].value = elm.value;
+      rangeMax[1].value = elm.value;
+      outputRangeMax[0].innerHTML = elm.value;
+      outputRangeMax[1].innerHTML = elm.value;
+    });
   });
 };
 customRangeInput();
@@ -185,22 +210,32 @@ customRangeInput();
 
 // ================================= Checkbox Search Start =====================================
 const checkboxSearch = () => {
-  let arr = [];
+  const obj = {
+    type: [],
+    price: [],
+    sex: [],
+  };
+  let rangeMax = $(".range-min");
+  let rangeMin = $(".range-max");
+  obj["price"].push(rangeMax.value);
+  obj["price"].push(rangeMin.value);
   let input = $$(".shop-input-type input");
   for (let x of input) {
     if (x.checked) {
-      arr.push(x.value);
-      x.checked = false;
+      if (
+        x.value == "pants" ||
+        x.value == "hat" ||
+        x.value == "t-shirt" ||
+        x.value == "shoe"
+      ) {
+        obj["type"].push(x.value);
+      } else {
+        obj["sex"].push(x.value);
+      }
     }
   }
-
-  let rangeMax = $(".range-min");
-  let rangeMin = $(".range-max");
-  arr.push(rangeMax.value);
-  arr.push(rangeMin.value);
-  return arr;
+  return obj;
 };
-checkboxSearch();
 // ================================= Checkbox Search End =====================================
 
 // ====================================
@@ -211,35 +246,84 @@ const clearFilterTags = () => {
 // =============================== Render Filter Tag Start ==============
 const renderfilterTag = (dataFilter) => {
   let filterApply = $(".filter-apply");
-  // dataFilter.splice(dataFilter.length - 2, 2);
-  let data = dataFilter
+  let data = [...dataFilter["type"], ...dataFilter["sex"]];
+  data = data.map((elm) => {
+    if (elm == "pants") return "Quần";
+    else if (elm == "t-shirt") return "Áo";
+    else if (elm == "hat") return "Nón";
+    else if (elm == "shoe") return "Giày";
+    else if (elm == "male") return "Nam";
+    else return "Nữ";
+  });
+  data = data
     .map((e) => {
       return `<div class="filter-apply-tag">
                 <span>${e}</span>
-                <i class="fa-solid fa-xmark"></i>
             </div>
     `;
     })
     .join(" ");
   filterApply.innerHTML += data;
 };
+
+//<i class="fa-solid fa-xmark"></i>
+
 // =============================== Render Filter Tag End ==============
+
+const sortPrice = (priceCurrent, min, max) => {
+  min = parseInt(min, 10);
+  max = parseInt(max, 10);
+  priceCurrent = priceCurrent.filter((elm) => {
+    if (elm.price >= min && elm.price < max) return elm;
+  });
+  return priceCurrent;
+};
 
 // ============================== Render Filer Sort Start ==============
 const renderFilterSort = (dataFilter) => {
-  let price = dataFilter.splice(dataFilter.length - 2, 2);
-  let lengthData = dataFilter.length;
   let data = getDataTypeProducts();
-  data = data.filter((item) => {
-    for (let i of dataFilter) {
-      if (item.type == i || item.sex == i) {
-        if (item.price >= price[0] && item.price < price[1]) return item;
-      }
-    }
-  });
-  return data;
-};
+  if (dataFilter["type"].length != 0) {
+    let arrFilter = [];
+    data.forEach((elm, index) => {
+      dataFilter["type"].forEach((elm_1, index_1) => {
+        for (let x of Object.values(elm)) {
+          if (x == elm_1) {
+            arrFilter.push(elm);
+            break;
+          }
+        }
+      });
+    });
 
+    if (dataFilter["sex"].length != 0) {
+      arrFilter = arrFilter.filter((elm, index) => {
+        if (elm.sex == dataFilter["sex"][0] || elm.sex == dataFilter["sex"][1])
+          return elm;
+      });
+      return sortPrice(
+        arrFilter,
+        dataFilter["price"][0],
+        dataFilter["price"][1]
+      );
+    } else {
+      return sortPrice(
+        arrFilter,
+        dataFilter["price"][0],
+        dataFilter["price"][1]
+      );
+    }
+  } else {
+    if (dataFilter["sex"].length != 0) {
+      data = data.filter((elm) => {
+        if (elm.sex == dataFilter["sex"][0] || elm.sex == dataFilter["sex"][1])
+          return elm;
+      });
+      return sortPrice(data, dataFilter["price"][0], dataFilter["price"][1]);
+    } else {
+      return sortPrice(data, dataFilter["price"][0], dataFilter["price"][1]);
+    }
+  }
+};
 // ============================== Render Filer Sort Start ==============
 
 // ========================================= Filter Submit Start ===========================
@@ -252,6 +336,7 @@ const filterSubmit = () => {
       renderfilterTag(dataFilter);
       clearELMProducts();
       renderCart(renderFilterSort(dataFilter));
+      removeChecked();
       let sl = $$(".filter-sort-right select option");
       sl[0].selected = true;
       // remove open filter
