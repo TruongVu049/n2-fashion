@@ -86,6 +86,7 @@ function slideShowBN() {
     });
     if (tabIndex >= imgs.length) tabIndex = 0;
     imgs[tabIndex].classList.add("active");
+    imgs[tabIndex].style.animationName = "fadeInRightImage";
   });
   btnLeft.addEventListener("click", function (e) {
     tabIndex--;
@@ -94,6 +95,7 @@ function slideShowBN() {
     });
     if (tabIndex < 0) tabIndex = imgs.length - 1;
     imgs[tabIndex].classList.add("active");
+    imgs[tabIndex].style.animationName = "fadeInLeftImage";
   });
 }
 slideShowBN();

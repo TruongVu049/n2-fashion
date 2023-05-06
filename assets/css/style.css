@@ -1620,11 +1620,41 @@ th {
 
 .banner .banner-slideshow img {
     display: none;
+    /* animation-name: fadeInRightImage; */
+    animation-duration: 0.25s;
+    /* animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.9, 1);
 }
 
 .banner .banner-slideshow img.active {
     display: block;
 }
+
+
+@keyframes fadeInLeftImage {
+    0% {
+        opacity: 0.2;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRightImage {
+    0% {
+        opacity: 0.2;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 
 .banner .banner-content {
     position: absolute;
