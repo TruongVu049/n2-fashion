@@ -382,3 +382,40 @@ dealsTimeDown();
 // ============================= Counter Products Start ============================
 function counterProduct() {}
 // ============================= Counter Products End ============================
+
+// ====================== Search Products Start ============================
+function searchProducts() {
+  let open = $("#id-search");
+  let innerSearch = $(".search-products");
+  let input = $("input#des-data");
+  open.addEventListener("click", function () {
+    innerSearch.classList.toggle("active");
+    open.classList.toggle("active");
+    input.value = "";
+    input.focus();
+  });
+}
+searchProducts();
+
+function checkInputSearch(inputSearch) {
+  if (inputSearch.value == "") {
+    alert("Vui lòng điền nội dung vào ô tìm kiếm");
+  } else {
+    let data = inputSearch.value.trim().toLowerCase();
+    location.href = `sanpham.html?res=${data}`;
+  }
+}
+function handleSearch() {
+  let btnSearch = $("#btn-search");
+  let inputSearch = $("input#des-data");
+  btnSearch.addEventListener("click", function () {
+    checkInputSearch(inputSearch);
+  });
+  inputSearch.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      checkInputSearch(inputSearch);
+    }
+  });
+}
+handleSearch();
+// ====================== Search Products End ============================

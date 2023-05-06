@@ -20,6 +20,9 @@ function renderHeader() {
                     </ul>
                 </div>
                 <div class="navbar-right">
+                    <a id="id-search" href="javascript:void(0)" class="header-action search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
                     <a href="login.html" class="header-action user">
                         <span class="check-user"></span>
                         <i class="fa-regular fa-user"></i>
@@ -38,6 +41,7 @@ function renderHeader() {
         </div>
     </nav>
 
+    
 
     <!-- ==================== MOBILE MENU ================================= -->
     <div class="mobile-menu">
@@ -145,7 +149,21 @@ function renderHeader() {
                 </button>
             </div>
         </div>
-    </div>`;
+    </div>
+    <section>
+        <div class="container">
+            <div class="search-products">
+                <div>
+                    <label for="name"></label>
+                    <input type="text" name="name" id="des-data" placeholder="Tìm kiếm sản phẩm ...">
+                </div>
+                <div id="btn-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    `;
   let namePage = location.pathname;
   namePage = namePage.split(/[/]/);
   let navbar_center = document.querySelectorAll(".navbar-center ul li a");

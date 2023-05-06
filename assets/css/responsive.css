@@ -51,6 +51,9 @@
         margin-top: 60px;
     }
 
+    .search-products {
+        margin: 0 50px;
+    }
 }
 
 
@@ -75,6 +78,13 @@
         margin-top: 10px;
     }
 
+    .search-products>div:first-child {
+        width: 80%;
+    }
+
+    .search-products>div:last-child {
+        width: 20%;
+    }
 }
 
 

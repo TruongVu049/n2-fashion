@@ -126,6 +126,7 @@ input::placeholder {
 body {
     background: var(--while-10-color);
     scroll-behavior: smooth;
+    position: relative;
 }
 
 /* ======================================== scrollbar style ======================================= */

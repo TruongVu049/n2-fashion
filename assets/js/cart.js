@@ -74,6 +74,16 @@ const checkPageRender = () => {
 };
 // ========================== Check Page Render End =======================
 
+const filterSearch = (value, dataCart) => {
+  let arr = [];
+  dataCart.forEach((elm, index) => {
+    if (elm["name"].toLowerCase().indexOf(value) > -1) {
+      arr.push(elm);
+    }
+  });
+  return arr;
+};
+
 // ========================== Get Data Type Products Start ============================
 const getDataTypeProducts = () => {
   const dataCart = DataProducts.slice();
@@ -90,10 +100,16 @@ const getDataTypeProducts = () => {
     });
     return dataPage;
   } else {
+    const urlParams = new URLSearchParams(location.search);
+
+    for (const value of urlParams.values()) {
+      if (value != "all") {
+        return filterSearch(value, dataCart);
+      }
+    }
     return dataCart;
   }
 };
-
 // ========================== Get Data Type Products End ============================
 
 // ====================== Init Render Cart Start ===================================
