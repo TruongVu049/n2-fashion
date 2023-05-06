@@ -71,6 +71,9 @@
         font-size: 18px;
     }
 
+    .product-info-right .name {
+        margin-top: 10px;
+    }
 
 }
 

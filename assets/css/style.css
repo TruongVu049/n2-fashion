@@ -2079,6 +2079,12 @@ th {
     cursor: pointer;
 }
 
+.product-info-right .couter .couter-product strong {
+    margin-left: auto;
+    padding: 0 6px;
+    margin-right: auto;
+}
+
 /* ============================================= Page Product Info end ================================ */
 
 

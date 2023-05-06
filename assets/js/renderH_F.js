@@ -251,7 +251,7 @@ function rederFooter() {
 </div>
 
 <div class="footer-bottom">
-    <p>© 2023 Destry Made width by AAAAAA.</p>
+    <p>© 2023 by TLA.</p>
 </div>`;
 }
 renderHeader();

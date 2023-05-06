@@ -5,7 +5,6 @@ let $$ = document.querySelectorAll.bind(document);
 const renderMnCart = (data) => {
   let cartList = $(".inner-cart-items");
   cartList.innerHTML = "";
-  //   cartList.innerHTML = "";
   let arr = data
     .map((elm) => {
       return `
