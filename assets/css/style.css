@@ -1965,6 +1965,10 @@ th {
     margin-left: 16px;
 }
 
+.tabs-title {
+    margin-bottom: 10px;
+}
+
 .tabs-title .tabs-title-top {
     margin-bottom: 20px;
 }
