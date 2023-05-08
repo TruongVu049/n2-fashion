@@ -103,6 +103,10 @@
     .mobile-menu .mobile-menu-inner {
         width: 90%;
     }
+
+    .search-products {
+        margin: 0 30px;
+    }
 }
 
 

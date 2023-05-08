@@ -167,7 +167,14 @@ function renderHeader() {
   let namePage = location.pathname;
   namePage = namePage.split(/[/]/);
   let navbar_center = document.querySelectorAll(".navbar-center ul li a");
-
+  if (
+    namePage[namePage.length - 1] == "" ||
+    !namePage[namePage.length - 1].includes(".html")
+  ) {
+    navbar_center[0].classList.add("active");
+    navbar_center[6].classList.add("active");
+    return;
+  }
   for (let i of navbar_center) {
     if (i.getAttribute("href").includes(namePage[namePage.length - 1]))
       i.classList.add("active");
