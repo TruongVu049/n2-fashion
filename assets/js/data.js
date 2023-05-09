@@ -347,7 +347,7 @@ export const DataProducts = [
     type: "shoe",
     sex: "unisex",
     provide: "converse",
-    color: [],
+    color: ["trắng"],
     size: ["07", "08", "09", "10"],
     price: 2600000,
     pd_info:
