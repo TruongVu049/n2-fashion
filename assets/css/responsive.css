@@ -107,6 +107,20 @@
     .search-products {
         margin: 0 30px;
     }
+
+    .products-margin h3 {
+        margin-top: 40px;
+    }
+
+    .products-margin.products-provide .row.active>div,
+    .products-margin.products-relate .row.active>div {
+        padding: 0 8px;
+    }
+
+    .products-margin.products-provide .shop-products-card,
+    .products-margin.products-relate .shop-products-card {
+        margin-bottom: 18px;
+    }
 }
 
 

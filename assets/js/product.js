@@ -187,7 +187,7 @@ const renderInfoProduct = () => {
                 <i class="fa-solid fa-minus"></i>
             </div>
             <div>
-                <strong>1</strong>
+                <strong data-value="1">1</strong>
             </div>
             <div class="couter-product-plug">
                 <i class="fa-solid fa-plus"></i>
@@ -295,3 +295,21 @@ const handleColor = () => {
   });
 };
 handleColor();
+
+const couterProduct = () => {
+  let decrease = $(".couter-product-minus");
+  let increase = $(".couter-product-plug");
+  let innerValue = $(".product-info-right .couter .couter-product strong");
+
+  let couter = 1;
+  decrease.addEventListener("click", function () {
+    if (innerValue.innerHTML == "1") return;
+    innerValue.innerHTML = --couter;
+    innerValue.dataset.value = couter;
+  });
+  increase.addEventListener("click", function () {
+    innerValue.innerHTML = ++couter;
+    innerValue.dataset.value = couter;
+  });
+};
+couterProduct();
