@@ -214,3 +214,16 @@ const removeCartItem = () => {
 };
 removeCartItem();
 // ==================== Remove Cart Item End =====================================
+
+const checkPrice = () => {
+  let payTotal = $(".total-product .li-total > div strong");
+  let submit = $(".btn-submit");
+  if (payTotal == null) return;
+  submit.addEventListener("click", function () {
+    if (payTotal.innerHTML === "0") alert("Không có sản phẩm trong giỏ hàng");
+    else {
+      location.href = "thanh-toan.html";
+    }
+  });
+};
+checkPrice();
