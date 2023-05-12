@@ -59,19 +59,31 @@ const renderCart = (infoProduct) => {
     .join(" ");
   shop_products_bottom.innerHTML = infoProduct;
 };
+
 // ====================== Render Cart End ==============================
+
+const getURLSearch = () => {
+  let urlParams = new URLSearchParams(location.search);
+  let arr = {};
+  for (const [key, value] of urlParams) {
+    {
+      arr[key] = value;
+    }
+  }
+  return arr;
+};
+getURLSearch();
 // ========================== Check Page Render Start =======================
 const checkPageRender = () => {
-  let urlParams = new URLSearchParams(location.search);
-
-  for (const value of urlParams.values()) {
-    if (value == "male") {
-      return "male";
-    } else if (value == "female") {
-      return "female";
-    } else {
-      return "all";
-    }
+  let objURLSearch = getURLSearch();
+  if (objURLSearch.page == "male") {
+    return "male";
+  } else if (objURLSearch.page == "female") {
+    return "female";
+  } else if (objURLSearch.page == "all") {
+    return "all";
+  } else {
+    return "search";
   }
 };
 // ========================== Check Page Render End =======================
@@ -90,7 +102,6 @@ const filterSearch = (value, dataCart) => {
 const getDataTypeProducts = () => {
   const dataCart = DataProducts.slice();
   let typePage = checkPageRender();
-  console.log(typePage);
   if (typePage == "female") {
     const dataPage = dataCart.filter((elm) => {
       return elm.sex == "female";
@@ -101,22 +112,81 @@ const getDataTypeProducts = () => {
       return elm.sex == "male";
     });
     return dataPage;
-  } else {
-    const urlParams = new URLSearchParams(location.search);
-
-    for (const value of urlParams.values()) {
-      if (value != "all") {
-        return filterSearch(value, dataCart);
-      }
-    }
+  } else if (typePage == "all") {
     return dataCart;
+  } else {
+    const objURLSearch = getURLSearch();
+    return filterSearch(objURLSearch.res, dataCart);
   }
 };
+
 // ========================== Get Data Type Products End ============================
+// ======================== Pavination Start ==============================
+const renderProductsPV = () => {
+  let a = $$(".pv-container-items > div > a");
+  let data = getDataTypeProducts();
+  let objURLSearch = getURLSearch();
+  let arr = [];
+  if (!objURLSearch.currentpage) a[0].classList.add("active");
+  else a[objURLSearch.currentpage - 1].classList.add("active");
+  objURLSearch.pagestart = parseInt(objURLSearch.pagestart);
+  objURLSearch.pageend = parseInt(objURLSearch.pageend);
+  if (!objURLSearch.pagestart) {
+    console.log("page 1");
+    for (let i = 0; i < 6; i++) arr.push(data[i]);
+  } else {
+    for (let i = objURLSearch.pagestart; i < objURLSearch.pageend; i++) {
+      arr.push(data[i]);
+    }
+  }
+  return arr;
+};
+
+const renderTagA = (obj) => {
+  let pavinationTagA = $(".pv-container-items");
+  obj = obj
+    .map((elm, index) => {
+      return `
+      <div>
+          <a class="" href="sanpham.html?page=${checkPageRender()}&pagestart=${
+        elm.start
+      }&pageend=${elm.end}&currentpage=${index + 1}" data-start="${
+        elm.start
+      }" data-end="${elm.end}">${index + 1}</a>
+      </div>
+    `;
+    })
+    .join("");
+  pavinationTagA.innerHTML = obj;
+};
+
+const pavination = () => {
+  let arr = [];
+  let rows = 6;
+  let start, end;
+  let total = getDataTypeProducts();
+  let pages = Math.ceil(total.length / rows);
+  for (let i = 0; i < pages; i++) {
+    start = rows * i;
+    end = rows * (i + 1);
+    if (end > total.length) {
+      end = total.length;
+    }
+    let obj = {
+      start: start,
+      end: end,
+    };
+    arr.push(obj);
+  }
+  renderTagA(arr);
+};
+
+// ======================== Pavination End ==============================
 
 // ====================== Init Render Cart Start ===================================
 const initRenderCart = () => {
-  renderCart(getDataTypeProducts());
+  pavination();
+  renderCart(renderProductsPV());
 };
 initRenderCart();
 // ====================== Init Render Cart End ===================================
@@ -378,3 +448,7 @@ const checkPageFilter = () => {
   }
 };
 checkPageFilter();
+
+// =========================
+
+// =========================

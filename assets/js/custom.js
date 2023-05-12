@@ -398,7 +398,6 @@ function searchProducts() {
   });
 }
 searchProducts();
-
 function checkInputSearch(inputSearch) {
   if (inputSearch.value == "") {
     alert("Vui lòng điền nội dung vào ô tìm kiếm");
