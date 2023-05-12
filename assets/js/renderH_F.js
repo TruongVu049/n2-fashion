@@ -13,8 +13,8 @@ function renderHeader() {
                     <ul>
                         <li><a href="index.html">trang chủ</a></li>
                         <li><a href="sanpham.html?page=all">sản phẩm</a></li>
-                        <li><a href="sanpham-nam.html?page=male">nam</a></li>
-                        <li><a href="sanpham-nu.html?page=female">nữ</a></li>
+                        <li><a href="sanpham.html?page=male">nam</a></li>
+                        <li><a href="sanpham.html?page=female">nữ</a></li>
                         <li><a href="blog.html">blog</a></li>
                         <li><a href="lienhe.html">liên hệ</a></li>
                     </ul>
@@ -57,8 +57,8 @@ function renderHeader() {
                 <ul>
                     <li><a href="index.html">trang chủ</a></li>
                     <li><a href="sanpham.html?page=all">sản phẩm</a></li>
-                    <li><a href="sanpham-nam.html?page=male">nam</a></li>
-                    <li><a href="sanpham-nu.html?page=female">nữ</a></li>
+                    <li><a href="sanpham.html?page=male">nam</a></li>
+                    <li><a href="sanpham.html?page=female">nữ</a></li>
                     <li><a href="blog.html">blog</a></li>
                     <li><a href="lienhe.html">liên hệ</a></li>
                 </ul>

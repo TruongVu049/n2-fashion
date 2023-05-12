@@ -60,16 +60,30 @@ const renderCart = (infoProduct) => {
   shop_products_bottom.innerHTML = infoProduct;
 };
 // ====================== Render Cart End ==============================
-
+// http://127.0.0.1:5500/sanpham.html?page=all
 // ========================== Check Page Render Start =======================
+// const checkPageRender = () => {
+//   const urlParams = location.pathname;
+//   if (urlParams.includes("sanpham-nam.html")) {
+//     return "male";
+//   } else if (urlParams.includes("sanpham-nu.html")) {
+//     return "female";
+//   } else {
+//     return "all";
+//   }
+// };
+
 const checkPageRender = () => {
-  const urlParams = location.pathname;
-  if (urlParams.includes("sanpham-nam.html")) {
-    return "male";
-  } else if (urlParams.includes("sanpham-nu.html")) {
-    return "female";
-  } else {
-    return "all";
+  let urlParams = new URLSearchParams(location.search);
+
+  for (const value of urlParams.values()) {
+    if (value == "male") {
+      return "male";
+    } else if (value == "female") {
+      return "female";
+    } else {
+      return "all";
+    }
   }
 };
 // ========================== Check Page Render End =======================
@@ -367,3 +381,12 @@ const filterSubmit = () => {
 };
 filterSubmit();
 // ========================================= Filter Submit End ==========================
+const checkPageFilter = () => {
+  let checkType = checkPageRender();
+  if (checkType == "male" || checkType == "female") {
+    let filterSex = $$(".row-filters.shop-filters-sex.shop-input-type");
+    filterSex[0].innerHTML = "";
+    filterSex[1].innerHTML = "";
+  }
+};
+checkPageFilter();
