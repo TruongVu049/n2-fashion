@@ -166,6 +166,11 @@ function renderHeader() {
     `;
   let namePage = location.pathname;
   namePage = namePage.split(/[/]/);
+  let urlParams = new URLSearchParams(location.search);
+  let typePage;
+  for (const value of urlParams.values()) {
+    typePage = value;
+  }
   let navbar_center = document.querySelectorAll(".navbar-center ul li a");
   if (
     namePage[namePage.length - 1] == "" ||
@@ -176,8 +181,15 @@ function renderHeader() {
     return;
   }
   for (let i of navbar_center) {
-    if (i.getAttribute("href").includes(namePage[namePage.length - 1]))
-      i.classList.add("active");
+    if (i.getAttribute("href").includes(namePage[namePage.length - 1])) {
+      if (namePage[namePage.length - 1] == "sanpham.html") {
+        let getParam = i.getAttribute("href").split("=");
+        if (typePage == getParam[getParam.length - 1])
+          i.classList.add("active");
+      } else {
+        i.classList.add("active");
+      }
+    }
   }
 }
 

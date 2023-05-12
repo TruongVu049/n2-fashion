@@ -60,19 +60,7 @@ const renderCart = (infoProduct) => {
   shop_products_bottom.innerHTML = infoProduct;
 };
 // ====================== Render Cart End ==============================
-// http://127.0.0.1:5500/sanpham.html?page=all
 // ========================== Check Page Render Start =======================
-// const checkPageRender = () => {
-//   const urlParams = location.pathname;
-//   if (urlParams.includes("sanpham-nam.html")) {
-//     return "male";
-//   } else if (urlParams.includes("sanpham-nu.html")) {
-//     return "female";
-//   } else {
-//     return "all";
-//   }
-// };
-
 const checkPageRender = () => {
   let urlParams = new URLSearchParams(location.search);
 
