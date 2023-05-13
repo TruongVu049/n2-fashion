@@ -3,10 +3,6 @@ import { DataProducts } from "./data.js";
 let $ = document.querySelector.bind(document);
 let $$ = document.querySelectorAll.bind(document);
 
-// ============================ input Range Start ====================================
-
-// ============================ input Range End ====================================
-
 // ========================== Clear ELM Products Start ======================
 const clearELMProducts = () => {
   let shop_products_bottom = $(".shop-products-bottom .row");
@@ -115,15 +111,6 @@ const getDataTypeProducts = () => {
 
 // ========================== Get Data Type Products End ============================
 
-// =========================== Remove Checked =====================================
-const removeChecked = () => {
-  let input = $$(".shop-input-type input");
-  for (let x of input) {
-    x.checked = false;
-  }
-};
-// =========================== Remove Checked =====================================
-
 // ========================= Custom Range Input Start ===================================
 const customRangeInput = () => {
   let rangeMax = $$(".range-max");
@@ -158,18 +145,6 @@ customRangeInput();
 
 // ========================= Custom Range Input End ===================================
 
-// =============================== Range Input Start ============================
-// const rangeInput  =()=> {
-
-//   let outputRangeMin = $(".output-price-left");
-//   let outputRangeMax = $(".output-price-right");
-//   rangeMin.addEventListener('input', function(){
-//     console.log(rangeMin.value);
-//   })
-// }
-// rangeInput();
-// =============================== Range Input End ============================
-
 // ================================= Checkbox Search Start =====================================
 const checkboxSearch = () => {
   const obj = {
@@ -196,41 +171,10 @@ const checkboxSearch = () => {
       }
     }
   }
+  // sessionStorage.setItem("filtertag", JSON.stringify(obj));
   return obj;
 };
 // ================================= Checkbox Search End =====================================
-
-// ====================================
-const clearFilterTags = () => {
-  $(".filter-apply").innerHTML = "";
-};
-
-// =============================== Render Filter Tag Start ==============
-const renderfilterTag = (dataFilter) => {
-  let filterApply = $(".filter-apply");
-  let data = [...dataFilter["type"], ...dataFilter["sex"]];
-  data = data.map((elm) => {
-    if (elm == "pants") return "Quần";
-    else if (elm == "t-shirt") return "Áo";
-    else if (elm == "hat") return "Nón";
-    else if (elm == "shoe") return "Giày";
-    else if (elm == "male") return "Nam";
-    else return "Nữ";
-  });
-  data = data
-    .map((e) => {
-      return `<div class="filter-apply-tag">
-                <span>${e}</span>
-            </div>
-    `;
-    })
-    .join(" ");
-  filterApply.innerHTML += data;
-};
-
-//<i class="fa-solid fa-xmark"></i>
-
-// =============================== Render Filter Tag End ==============
 
 const sortPrice = (priceCurrent, min, max) => {
   min = parseInt(min, 10);
@@ -243,7 +187,7 @@ const sortPrice = (priceCurrent, min, max) => {
 
 // ============================== Render Filer Sort Start ==============
 const renderFilterSort = (dataFilter) => {
-  let data = getDataTypeProducts();
+  let data = getDataTypeProducts("filtertag");
   if (dataFilter["type"].length != 0) {
     let arrFilter = [];
     data.forEach((elm, index) => {
@@ -293,25 +237,12 @@ const filterSubmit = () => {
   let btnSubmit = $$(".apply-filters button.btn.btn-m");
   for (let i = 0; i < btnSubmit.length; i++) {
     btnSubmit[i].addEventListener("click", function () {
-      clearFilterTags();
       let dataFilter = checkboxSearch();
-      renderfilterTag(dataFilter);
       let dataPB = renderFilterSort(dataFilter);
       clearELMProducts();
-      // C1
-      // removeSessionProducts();
-      // renderPage(dataPB);s
-      // C2
       setSessionProducts(dataPB);
       let listA = $$(".pv-container-items > div > a");
       location.href = listA[0].getAttribute("href");
-
-      removeChecked();
-      let sl = $$(".filter-sort-right select option");
-      sl[0].selected = true;
-      // remove open filter
-      let filter_tm = $(".filter-tm");
-      filter_tm.classList.remove("open");
     });
   }
 };
@@ -335,12 +266,12 @@ const setSessionProducts = (listproduct) => {
   sessionStorage.setItem("listproduct", JSON.stringify(listproduct));
 };
 
-const getSessionProducts = () => {
-  return JSON.parse(sessionStorage.getItem("listproduct"));
+const getSessionProducts = (name) => {
+  return JSON.parse(sessionStorage.getItem(name));
 };
 
-const removeSessionProducts = () => {
-  sessionStorage.removeItem("listproduct");
+const removeSessionProducts = (name) => {
+  sessionStorage.removeItem(name);
 };
 const devideProduct = (listproduct) => {
   let arr = [];
@@ -382,7 +313,7 @@ const renderTagAPavination = (obj) => {
 };
 const getProductOnePage = () => {
   let objURLSearch = getURLSearch();
-  let listProduct = getSessionProducts();
+  let listProduct = getSessionProducts("listproduct");
   if (!objURLSearch.indexstart) {
     return listProduct.splice(0, 6);
   } else {
@@ -404,12 +335,11 @@ const setURLSearch = () => {
   console.log(objURLSearch);
 };
 const renderPage = (listproduct) => {
-  if (!getSessionProducts()) {
+  if (!getSessionProducts("listproduct")) {
     setSessionProducts(listproduct);
   } else {
-    listproduct = getSessionProducts();
+    listproduct = getSessionProducts("listproduct");
   }
-
   renderTagAPavination(devideProduct(listproduct));
   renderCart(getProductOnePage());
   checkCurrentPageActive();
@@ -417,7 +347,7 @@ const renderPage = (listproduct) => {
 const checkPageUrlSearch = () => {
   let objURLSearch = getURLSearch();
   console.log(objURLSearch);
-  if (!objURLSearch.indexstart) removeSessionProducts();
+  if (!objURLSearch.indexstart) removeSessionProducts("listproduct");
 };
 // ============================== Pavination End ================================
 // ====================== Init Render Cart Start ===================================
@@ -457,7 +387,7 @@ prevOrNextPage();
 
 // ========================== Sort By Price Start ======================================
 const getSortProducts = (typeSort) => {
-  let dataSort = getSessionProducts();
+  let dataSort = getSessionProducts("listproduct");
   if (typeSort == "low-hight") {
     dataSort = dataSort.sort((x, y) => {
       return x.price - y.price;
@@ -483,3 +413,31 @@ const sortByPrice = () => {
 sortByPrice();
 
 // ========================== Sort By Price Start ======================================
+
+// =============================== Render Filter Tag Start ==============
+// const renderfilterTag = () => {
+//   let dataFilter = getSessionProducts("filtertag");
+//   if (!dataFilter) return;
+//   let filterApply = $(".filter-apply");
+//   let data = [...dataFilter["type"], ...dataFilter["sex"]];
+//   data = data.map((elm) => {
+//     if (elm == "pants") return "Quần";
+//     else if (elm == "t-shirt") return "Áo";
+//     else if (elm == "hat") return "Nón";
+//     else if (elm == "shoe") return "Giày";
+//     else if (elm == "male") return "Nam";
+//     else return "Nữ";
+//   });
+//   data = data
+//     .map((e) => {
+//       return `<div class="filter-apply-tag">
+//                 <span>${e}</span>
+//             </div>
+//     `;
+//     })
+//     .join(" ");
+//   filterApply.innerHTML += data;
+//   // removeSessionProducts("filtertag");
+// };
+// renderfilterTag();
+// =============================== Render Filter Tag End ==============
