@@ -115,60 +115,6 @@ const getDataTypeProducts = () => {
 
 // ========================== Get Data Type Products End ============================
 
-// ================================ Reset Select Sort Start =====================================
-
-const resetSelectSort = () => {
-  let select = $(".filter-sort-right select");
-  select.innerHTML = "";
-  select.innerHTML += `
-    <option selected value="defaul">Mặc định</option>
-    <option check="check" value="low-hight">Giá thấp tới cao
-    </option>
-    <option value="hight-low">Giá cao tới thấp</option>
-  `;
-};
-// ================================ Reset Select Sort End =====================================
-
-// ========================= Select Sort Start ===================================
-const selectSort = (typeSort) => {
-  clearELMProducts();
-  let dataCart = getDataTypeProducts();
-  if (typeSort == "low-hight") {
-    renderCart(
-      dataCart.sort((x, y) => {
-        return x.price - y.price;
-      })
-    );
-  } else if (typeSort == "hight-low") {
-    renderCart(
-      dataCart.sort((x, y) => {
-        return y.price - x.price;
-      })
-    );
-  } else {
-    renderCart(dataCart);
-  }
-};
-// ========================= Select Sort End ===================================
-
-const inputCheckbox = () => {
-  let inputCB = $$("input]");
-  console.log(inputCB);
-};
-// inputCheckbox();
-
-// =============================== Type Sort Start ==============================
-const typeSort = () => {
-  let select = $(".filter-sort-right select");
-  if (!select) return;
-  select.addEventListener("change", function () {
-    console.log(select.value);
-    selectSort(select.value);
-  });
-};
-typeSort();
-// =============================== Type Sort End ==============================
-
 // =========================== Remove Checked =====================================
 const removeChecked = () => {
   let input = $$(".shop-input-type input");
@@ -352,8 +298,14 @@ const filterSubmit = () => {
       renderfilterTag(dataFilter);
       let dataPB = renderFilterSort(dataFilter);
       clearELMProducts();
-      removeSessionProducts();
-      renderPage(dataPB);
+      // C1
+      // removeSessionProducts();
+      // renderPage(dataPB);s
+      // C2
+      setSessionProducts(dataPB);
+      let listA = $$(".pv-container-items > div > a");
+      location.href = listA[0].getAttribute("href");
+
       removeChecked();
       let sl = $$(".filter-sort-right select option");
       sl[0].selected = true;
@@ -439,11 +391,13 @@ const getProductOnePage = () => {
 };
 const checkCurrentPageActive = () => {
   let listA = $$(".pv-container-items > div > a");
+
   let objURLSearch = getURLSearch();
   if (!objURLSearch.currentpage) listA[0].classList.add("active");
-  else listA[objURLSearch.currentpage - 1].classList.add("active");
+  else {
+    listA[objURLSearch.currentpage - 1].classList.add("active");
+  }
 };
-
 const setURLSearch = () => {
   let objURLSearch = getURLSearch();
   objURLSearch.currentpage = 0;
@@ -500,3 +454,32 @@ const prevOrNextPage = () => {
   });
 };
 prevOrNextPage();
+
+// ========================== Sort By Price Start ======================================
+const getSortProducts = (typeSort) => {
+  let dataSort = getSessionProducts();
+  if (typeSort == "low-hight") {
+    dataSort = dataSort.sort((x, y) => {
+      return x.price - y.price;
+    });
+  } else if (typeSort == "hight-low") {
+    dataSort = dataSort.sort((x, y) => {
+      return y.price - x.price;
+    });
+  } else {
+    dataSort = dataSort;
+  }
+  setSessionProducts(dataSort);
+  renderCart(getProductOnePage());
+};
+
+const sortByPrice = () => {
+  let select = $(".filter-sort-right select");
+  if (!select) return;
+  select.addEventListener("change", function () {
+    getSortProducts(select.value);
+  });
+};
+sortByPrice();
+
+// ========================== Sort By Price Start ======================================
