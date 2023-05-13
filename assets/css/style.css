@@ -1323,6 +1323,10 @@ input[type="range"]::-moz-range-thumb {
     padding: 24px 0 16px 0;
 }
 
+.shop-pavination>div {
+    cursor: pointer;
+}
+
 .shop-pavination .pavination-center .pv-container-items {
     display: flex;
     align-items: center;

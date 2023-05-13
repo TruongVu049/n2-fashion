@@ -372,6 +372,8 @@ const checkPageFilter = () => {
     filterSex[0].innerHTML = "";
     filterSex[1].innerHTML = "";
   }
+  if (checkType == "male") $(".breadcrumb-area h2").innerHTML += " Nam";
+  else if (checkType == "female") $(".breadcrumb-area h2").innerHTML += " Nữ";
 };
 checkPageFilter();
 
@@ -471,3 +473,30 @@ const initRenderPage = () => {
 };
 initRenderPage();
 // ====================== Init Render Cart End ===================================
+const getIndexPage = (listA, type) => {
+  let currentpage;
+  let objURLSearch = getURLSearch();
+  listA.forEach((elm, index) => {
+    if (elm.classList.contains("active")) currentpage = index;
+  });
+  if (type == "decrease") {
+    if (currentpage == 0) return;
+    else location.href = listA[currentpage - 1].getAttribute("href");
+  } else {
+    if (currentpage == listA.length - 1) return;
+    else location.href = listA[currentpage + 1].getAttribute("href");
+  }
+};
+const prevOrNextPage = () => {
+  let prevPage = $(".pavination-left");
+  let nextPage = $(".pavination-right");
+  let listA = $$(".pv-container-items > div > a");
+
+  prevPage.addEventListener("click", (e) => {
+    getIndexPage(listA, "decrease");
+  });
+  nextPage.addEventListener("click", (e) => {
+    getIndexPage(listA, "increase");
+  });
+};
+prevOrNextPage();
