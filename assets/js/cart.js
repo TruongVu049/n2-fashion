@@ -1,4 +1,5 @@
 import { DataProducts } from "./data.js";
+
 let $ = document.querySelector.bind(document);
 let $$ = document.querySelectorAll.bind(document);
 
@@ -72,7 +73,48 @@ const getURLSearch = () => {
   }
   return arr;
 };
-getURLSearch();
+
+// const devidePage = (dataPD) => {
+//   let arr = [];
+//   let rows = 6;
+//   let start, end;
+//   let total = dataPD;
+//   let indexProducts = getDataProductsIndex(getDataTypeProducts(), total);
+//   let pages = Math.ceil(total.length / rows);
+//   for (let i = 0; i < pages; i++) {
+//     start = rows * i;
+//     end = rows * (i + 1);
+//     if (end > total.length) {
+//       end = total.length;
+//     }
+//     let stringIndex = "";
+//     for (let i = start; i < end; i++) {
+//       stringIndex += indexProducts[i];
+//     }
+//     let obj = {
+//       pdindex: stringIndex,
+//     };
+//     arr.push(obj);
+//   }
+//   console.log("devidePage");
+//   console.log(arr);
+//   return arr;
+// };
+
+// const convertArrStringtoInt = (arrString, dataPB) => {
+//   if (!arrString && !dataPB) {
+//     let objPD = devidePage(getDataTypeProducts());
+//     arrString = objPD[0].pdindex;
+//   }
+//   let arrInt = [];
+//   for (let i = 0; i < arrString.length; i += 2) {
+//     let temp = arrString.substring(i, 2 + i);
+//     arrInt.push(parseInt(temp));
+//   }
+//   console.log(arrInt);
+//   return arrInt;
+// };
+
 // ========================== Check Page Render Start =======================
 const checkPageRender = () => {
   let objURLSearch = getURLSearch();
@@ -87,7 +129,6 @@ const checkPageRender = () => {
   }
 };
 // ========================== Check Page Render End =======================
-
 const filterSearch = (value, dataCart) => {
   let arr = [];
   dataCart.forEach((elm, index) => {
@@ -122,71 +163,70 @@ const getDataTypeProducts = () => {
 
 // ========================== Get Data Type Products End ============================
 // ======================== Pavination Start ==============================
-const renderProductsPV = () => {
-  let a = $$(".pv-container-items > div > a");
-  let data = getDataTypeProducts();
-  let objURLSearch = getURLSearch();
-  let arr = [];
-  if (!objURLSearch.currentpage) a[0].classList.add("active");
-  else a[objURLSearch.currentpage - 1].classList.add("active");
-  objURLSearch.pagestart = parseInt(objURLSearch.pagestart);
-  objURLSearch.pageend = parseInt(objURLSearch.pageend);
-  if (!objURLSearch.pagestart) {
-    console.log("page 1");
-    for (let i = 0; i < 6; i++) arr.push(data[i]);
-  } else {
-    for (let i = objURLSearch.pagestart; i < objURLSearch.pageend; i++) {
-      arr.push(data[i]);
-    }
-  }
-  return arr;
-};
 
-const renderTagA = (obj) => {
-  let pavinationTagA = $(".pv-container-items");
-  obj = obj
-    .map((elm, index) => {
-      return `
-      <div>
-          <a class="" href="sanpham.html?page=${checkPageRender()}&pagestart=${
-        elm.start
-      }&pageend=${elm.end}&currentpage=${index + 1}" data-start="${
-        elm.start
-      }" data-end="${elm.end}">${index + 1}</a>
-      </div>
-    `;
-    })
-    .join("");
-  pavinationTagA.innerHTML = obj;
-};
+// const getDataProductsIndex = (alldata, data) => {
+//   let arr = [];
+//   alldata.forEach((elm, index) => {
+//     let checkN = false;
+//     data.forEach((elmFA) => {
+//       if (elmFA.Id == elm.Id) checkN = true;
+//     });
+//     if (checkN == true) {
+//       let temp = index;
+//       if (temp < 10) {
+//         temp.toString();
+//         temp = "0" + temp;
+//       } else temp = temp.toString();
+//       arr.push(temp);
+//     }
+//   });
+//   return arr;
+// };
 
-const pavination = () => {
-  let arr = [];
-  let rows = 6;
-  let start, end;
-  let total = getDataTypeProducts();
-  let pages = Math.ceil(total.length / rows);
-  for (let i = 0; i < pages; i++) {
-    start = rows * i;
-    end = rows * (i + 1);
-    if (end > total.length) {
-      end = total.length;
-    }
-    let obj = {
-      start: start,
-      end: end,
-    };
-    arr.push(obj);
-  }
-  renderTagA(arr);
-};
+// const renderProductsPV = (dataPd) => {
+//   let a = $$(".pv-container-items > div > a");
+//   let data = dataPd; // return products base on page name
+//   let objURLSearch = getURLSearch();
+//   let indexPd = convertArrStringtoInt(objURLSearch.pdindex);
+//   let arr = [];
+//   if (!objURLSearch.currentpage) a[0].classList.add("active");
+//   else a[objURLSearch.currentpage - 1].classList.add("active");
+//   indexPd.forEach((elm) => {
+//     arr.push(data[elm]);
+//   });
+//   console.log(arr);
+//   return arr;
+// };
+
+// const renderTagA = (obj) => {
+//   let pavinationTagA = $(".pv-container-items");
+//   obj = obj
+//     .map((elm, index) => {
+//       return `
+//       <div>
+//           <a class="" href="sanpham.html?page=${checkPageRender()}&pdindex=${
+//         elm.pdindex
+//       }&currentpage=${index + 1}" data-start="${elm.start}" data-end="${
+//         elm.end
+//       }">${index + 1}</a>
+//       </div>
+//     `;
+//     })
+//     .join("");
+//   pavinationTagA.innerHTML = obj;
+// };
+
+// const pavination = (data) => {
+//   renderTagA(devidePage(data));
+// };
 
 // ======================== Pavination End ==============================
 
 // ====================== Init Render Cart Start ===================================
 const initRenderCart = () => {
-  pavination();
-  renderCart(renderProductsPV());
+  // pavination(getDataTypeProducts());
+  // renderCart(renderProductsPV(getDataTypeProducts()));
+  renderCart(getDataTypeProducts());
 };
 initRenderCart();
 // ====================== Init Render Cart End ===================================
@@ -426,8 +466,9 @@ const filterSubmit = () => {
       clearFilterTags();
       let dataFilter = checkboxSearch();
       renderfilterTag(dataFilter);
+      let dataPB = renderFilterSort(dataFilter);
       clearELMProducts();
-      renderCart(renderFilterSort(dataFilter));
+      renderPage(dataPB);
       removeChecked();
       let sl = $$(".filter-sort-right select option");
       sl[0].selected = true;
@@ -449,6 +490,69 @@ const checkPageFilter = () => {
 };
 checkPageFilter();
 
-// =========================
+// ============================== Pavination Start ================================
 
-// =========================
+const setSessionProducts = (listproduct) => {
+  sessionStorage.setItem("listproduct", JSON.stringify(listproduct));
+};
+
+const getSessionProducts = () => {
+  return JSON.parse(sessionStorage.getItem("listproduct"));
+};
+
+const devideProduct = (listproduct) => {
+  let arr = [];
+  let rows = 6;
+  let start, end;
+
+  let pages = Math.ceil(listproduct.length / rows);
+  for (let i = 0; i < pages; i++) {
+    start = rows * i;
+    end = rows * (i + 1);
+    if (end > listproduct.length) {
+      end = listproduct.length;
+    }
+    let obj = {
+      start: start,
+      end: end,
+    };
+    arr.push(obj);
+  }
+  return arr;
+};
+
+const renderTagAPavination = (obj) => {
+  let pavinationTagA = $(".pv-container-items");
+  obj = obj
+    .map((elm, index) => {
+      return `
+      <div>
+          <a class="" href="sanpham.html?page=${checkPageRender()}&indexstart=${
+        elm.start
+      }&indexend=${elm.end}&currentpage=${index + 1}" data-start="${
+        elm.start
+      }" data-end="${elm.end}">${index + 1}</a>
+      </div>
+    `;
+    })
+    .join("");
+  pavinationTagA.innerHTML = obj;
+};
+const getProductOnePage = () => {
+  let objURLSearch = getURLSearch();
+  let listProduct = getSessionProducts();
+  console.log(objURLSearch);
+  if (!objURLSearch.indexstart) {
+    return listProduct.splice(0, 6);
+  } else {
+    return listProduct.splice(parseInt(objURLSearch.indexstart), 6);
+  }
+};
+
+const renderPage = (listproduct) => {
+  setSessionProducts(listproduct);
+  renderTagAPavination(devideProduct(listproduct));
+  renderCart(getProductOnePage());
+};
+renderPage(getDataTypeProducts());
+// ============================== Pavination End ================================
