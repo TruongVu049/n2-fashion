@@ -4,14 +4,7 @@ let $ = document.querySelector.bind(document);
 let $$ = document.querySelectorAll.bind(document);
 
 // ============================ input Range Start ====================================
-// const inputRange = () => {
-//   let inputMin = $(".range-input .range-min");
-//   let inputMax = $(".range-input .range-max");
-//   inputMin.addEventListener("input", (event) => {
-//     console.log(event.target.value);
-//   });
-// };
-// inputRange();
+
 // ============================ input Range End ====================================
 
 // ========================== Clear ELM Products Start ======================
@@ -442,15 +435,28 @@ const getProductOnePage = () => {
     return listProduct.splice(parseInt(objURLSearch.indexstart), 6);
   }
 };
+const checkCurrentPageActive = () => {
+  let listA = $$(".pv-container-items > div > a");
+  let objURLSearch = getURLSearch();
+  if (!objURLSearch.currentpage) listA[0].classList.add("active");
+  else listA[objURLSearch.currentpage - 1].classList.add("active");
+};
 
+const setURLSearch = () => {
+  let objURLSearch = getURLSearch();
+  objURLSearch.currentpage = 0;
+  console.log(objURLSearch);
+};
 const renderPage = (listproduct) => {
   if (!getSessionProducts()) {
     setSessionProducts(listproduct);
   } else {
     listproduct = getSessionProducts();
   }
+
   renderTagAPavination(devideProduct(listproduct));
   renderCart(getProductOnePage());
+  checkCurrentPageActive();
 };
 const checkPageUrlSearch = () => {
   let objURLSearch = getURLSearch();
@@ -458,7 +464,6 @@ const checkPageUrlSearch = () => {
   if (!objURLSearch.indexstart) removeSessionProducts();
 };
 // ============================== Pavination End ================================
-
 // ====================== Init Render Cart Start ===================================
 const initRenderPage = () => {
   checkPageUrlSearch();

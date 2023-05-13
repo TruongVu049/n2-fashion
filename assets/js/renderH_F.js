@@ -1,3 +1,14 @@
+const getURLSearch = () => {
+  let urlParams = new URLSearchParams(location.search);
+  let arr = {};
+  for (const [key, value] of urlParams) {
+    {
+      arr[key] = value;
+    }
+  }
+  return arr;
+};
+
 function renderHeader() {
   let header = document.querySelector("header");
   header.innerHTML = ` <!-- ================== Navbar ================== -->
@@ -166,11 +177,7 @@ function renderHeader() {
     `;
   let namePage = location.pathname;
   namePage = namePage.split(/[/]/);
-  let urlParams = new URLSearchParams(location.search);
-  let typePage;
-  for (const value of urlParams.values()) {
-    typePage = value;
-  }
+  let urlParams = getURLSearch();
   let navbar_center = document.querySelectorAll(".navbar-center ul li a");
   if (
     namePage[namePage.length - 1] == "" ||
@@ -184,7 +191,7 @@ function renderHeader() {
     if (i.getAttribute("href").includes(namePage[namePage.length - 1])) {
       if (namePage[namePage.length - 1] == "sanpham.html") {
         let getParam = i.getAttribute("href").split("=");
-        if (typePage == getParam[getParam.length - 1])
+        if (urlParams.page == getParam[getParam.length - 1])
           i.classList.add("active");
       } else {
         i.classList.add("active");
