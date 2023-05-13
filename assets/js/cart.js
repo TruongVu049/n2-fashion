@@ -74,47 +74,6 @@ const getURLSearch = () => {
   return arr;
 };
 
-// const devidePage = (dataPD) => {
-//   let arr = [];
-//   let rows = 6;
-//   let start, end;
-//   let total = dataPD;
-//   let indexProducts = getDataProductsIndex(getDataTypeProducts(), total);
-//   let pages = Math.ceil(total.length / rows);
-//   for (let i = 0; i < pages; i++) {
-//     start = rows * i;
-//     end = rows * (i + 1);
-//     if (end > total.length) {
-//       end = total.length;
-//     }
-//     let stringIndex = "";
-//     for (let i = start; i < end; i++) {
-//       stringIndex += indexProducts[i];
-//     }
-//     let obj = {
-//       pdindex: stringIndex,
-//     };
-//     arr.push(obj);
-//   }
-//   console.log("devidePage");
-//   console.log(arr);
-//   return arr;
-// };
-
-// const convertArrStringtoInt = (arrString, dataPB) => {
-//   if (!arrString && !dataPB) {
-//     let objPD = devidePage(getDataTypeProducts());
-//     arrString = objPD[0].pdindex;
-//   }
-//   let arrInt = [];
-//   for (let i = 0; i < arrString.length; i += 2) {
-//     let temp = arrString.substring(i, 2 + i);
-//     arrInt.push(parseInt(temp));
-//   }
-//   console.log(arrInt);
-//   return arrInt;
-// };
-
 // ========================== Check Page Render Start =======================
 const checkPageRender = () => {
   let objURLSearch = getURLSearch();
@@ -162,74 +121,6 @@ const getDataTypeProducts = () => {
 };
 
 // ========================== Get Data Type Products End ============================
-// ======================== Pavination Start ==============================
-
-// const getDataProductsIndex = (alldata, data) => {
-//   let arr = [];
-//   alldata.forEach((elm, index) => {
-//     let checkN = false;
-//     data.forEach((elmFA) => {
-//       if (elmFA.Id == elm.Id) checkN = true;
-//     });
-//     if (checkN == true) {
-//       let temp = index;
-//       if (temp < 10) {
-//         temp.toString();
-//         temp = "0" + temp;
-//       } else temp = temp.toString();
-//       arr.push(temp);
-//     }
-//   });
-//   return arr;
-// };
-
-// const renderProductsPV = (dataPd) => {
-//   let a = $$(".pv-container-items > div > a");
-//   let data = dataPd; // return products base on page name
-//   let objURLSearch = getURLSearch();
-//   let indexPd = convertArrStringtoInt(objURLSearch.pdindex);
-//   let arr = [];
-//   if (!objURLSearch.currentpage) a[0].classList.add("active");
-//   else a[objURLSearch.currentpage - 1].classList.add("active");
-//   indexPd.forEach((elm) => {
-//     arr.push(data[elm]);
-//   });
-//   console.log(arr);
-//   return arr;
-// };
-
-// const renderTagA = (obj) => {
-//   let pavinationTagA = $(".pv-container-items");
-//   obj = obj
-//     .map((elm, index) => {
-//       return `
-//       <div>
-//           <a class="" href="sanpham.html?page=${checkPageRender()}&pdindex=${
-//         elm.pdindex
-//       }&currentpage=${index + 1}" data-start="${elm.start}" data-end="${
-//         elm.end
-//       }">${index + 1}</a>
-//       </div>
-//     `;
-//     })
-//     .join("");
-//   pavinationTagA.innerHTML = obj;
-// };
-
-// const pavination = (data) => {
-//   renderTagA(devidePage(data));
-// };
-
-// ======================== Pavination End ==============================
-
-// ====================== Init Render Cart Start ===================================
-const initRenderCart = () => {
-  // pavination(getDataTypeProducts());
-  // renderCart(renderProductsPV(getDataTypeProducts()));
-  renderCart(getDataTypeProducts());
-};
-initRenderCart();
-// ====================== Init Render Cart End ===================================
 
 // ================================ Reset Select Sort Start =====================================
 
@@ -468,6 +359,7 @@ const filterSubmit = () => {
       renderfilterTag(dataFilter);
       let dataPB = renderFilterSort(dataFilter);
       clearELMProducts();
+      removeSessionProducts();
       renderPage(dataPB);
       removeChecked();
       let sl = $$(".filter-sort-right select option");
@@ -500,6 +392,9 @@ const getSessionProducts = () => {
   return JSON.parse(sessionStorage.getItem("listproduct"));
 };
 
+const removeSessionProducts = () => {
+  sessionStorage.removeItem("listproduct");
+};
 const devideProduct = (listproduct) => {
   let arr = [];
   let rows = 6;
@@ -541,7 +436,6 @@ const renderTagAPavination = (obj) => {
 const getProductOnePage = () => {
   let objURLSearch = getURLSearch();
   let listProduct = getSessionProducts();
-  console.log(objURLSearch);
   if (!objURLSearch.indexstart) {
     return listProduct.splice(0, 6);
   } else {
@@ -550,9 +444,25 @@ const getProductOnePage = () => {
 };
 
 const renderPage = (listproduct) => {
-  setSessionProducts(listproduct);
+  if (!getSessionProducts()) {
+    setSessionProducts(listproduct);
+  } else {
+    listproduct = getSessionProducts();
+  }
   renderTagAPavination(devideProduct(listproduct));
   renderCart(getProductOnePage());
 };
-renderPage(getDataTypeProducts());
+const checkPageUrlSearch = () => {
+  let objURLSearch = getURLSearch();
+  console.log(objURLSearch);
+  if (!objURLSearch.indexstart) removeSessionProducts();
+};
 // ============================== Pavination End ================================
+
+// ====================== Init Render Cart Start ===================================
+const initRenderPage = () => {
+  checkPageUrlSearch();
+  renderPage(getDataTypeProducts());
+};
+initRenderPage();
+// ====================== Init Render Cart End ===================================
