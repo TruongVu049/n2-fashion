@@ -235,14 +235,15 @@ const renderFilterSort = (dataFilter) => {
 // ========================================= Filter Submit Start ===========================
 const filterSubmit = () => {
   let btnSubmit = $$(".apply-filters button.btn.btn-m");
+  let typePage = checkPageRender();
   for (let i = 0; i < btnSubmit.length; i++) {
     btnSubmit[i].addEventListener("click", function () {
       let dataFilter = checkboxSearch();
       let dataPB = renderFilterSort(dataFilter);
       clearELMProducts();
       setSessionProducts(dataPB);
-      let listA = $$(".pv-container-items > div > a");
-      location.href = listA[0].getAttribute("href");
+      // let listA = $$(".pv-container-items > div > a");
+      location.href = `sanpham.html?page=${typePage}&indexstart=0&indexend=6&currentpage=1`;
     });
   }
 };
@@ -326,7 +327,14 @@ const checkCurrentPageActive = () => {
   let objURLSearch = getURLSearch();
   if (!objURLSearch.currentpage) listA[0].classList.add("active");
   else {
-    listA[objURLSearch.currentpage - 1].classList.add("active");
+    // if (!listA[objURLSearch.currentpage - 1]) return;
+    // listA[objURLSearch.currentpage - 1].classList.add("active");
+    try {
+      listA[objURLSearch.currentpage - 1].classList.add("active");
+      throw "error";
+    } catch (err) {
+      console.log("null");
+    }
   }
 };
 const setURLSearch = () => {
