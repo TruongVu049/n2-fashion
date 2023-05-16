@@ -15,24 +15,14 @@ const findProduct = () => {
   return arr;
 };
 // =========================== Find URL Start ==================================
-const renderSize = (data, element) => {
-  let listSize = $(".size .size-list");
-  let arr = data.size
+const renderTag = (data, className, type) => {
+  let listSize = $(`.product-info-right .${className}`);
+  let arr = data[`${type}`]
     .map((elm) => {
       return `<span>${elm}</span>`;
     })
     .join(" ");
   listSize.innerHTML = arr;
-};
-
-const renderColor = (data, element) => {
-  let listColor = $(".color .color-list");
-  let arr = data.color
-    .map((elm) => {
-      return `<span>${elm}</span>`;
-    })
-    .join(" ");
-  listColor.innerHTML = arr;
 };
 
 const renderGallery = (data, element) => {
@@ -48,57 +38,16 @@ const renderGallery = (data, element) => {
     .join(" ");
   listImgs.innerHTML += arr;
 };
-const renderProvide = (datas, data, element) => {
-  let products = $(".products-provide > .container > .row");
+const renderProducts = (datas, data, className, cd1, cd2) => {
+  let products = $(`.${className} > .container > .row`);
   let count = 1;
   let arr = datas
     .filter((elm, index) => {
-      if (elm.provide === data.provide && elm.Id != data.Id && count <= 4) {
-        count++;
-        return elm;
-      }
-    })
-    .map((elm) => {
-      return `
-      <div class="col-xl-3 col-bg-3 col-md-4 col-6">
-        <div class="shop-products-card">
-            <div class="products-card-thumb">
-                <img src="${elm.pd_image[0]}" alt="">
-            </div>
-            <div class="products-card-content">
-                <h4 class="provide">${elm.provide}</h4>
-                <h5 class="name">${elm.name}</h5>
-                <div class="ratings">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <span class="price">
-                    <strong>${elm.price}</strong>
-                    VNĐ
-                </span>
-                <div class="add-to-cart">
-                    <button data-id="${elm.Id}" class="btn btn-sm">Thêm vào giỏ hàng</button>
-                </div>
-                <a href="thongtinsanpham.html?id=${elm.Id}"></a>
-            </div>
-          </div>
-      </div>
-  `;
-    })
-    .join(" ");
-  products.innerHTML += arr;
-  if (arr) products.classList.add("active");
-};
-
-const renderRelate = (datas, data, element) => {
-  let products = $(".products-relate > .container > .row");
-  let count = 1;
-  let arr = datas
-    .filter((elm, index) => {
-      if (elm.type === data.type && elm.provide != data.provide && count <= 4) {
+      if (
+        elm[`${cd1}`] === data[`${cd1}`] &&
+        elm[`${cd2}`] != data[`${cd2}`] &&
+        count <= 4
+      ) {
         count++;
         return elm;
       }
@@ -202,10 +151,10 @@ const renderInfoProduct = () => {
         </button>
     </div>
   `;
-  renderSize(data);
-  renderColor(data);
-  renderProvide(DataProducts, data);
-  renderRelate(DataProducts, data);
+  renderTag(data, "size-list", "size");
+  renderTag(data, "color-list", "color");
+  renderProducts(DataProducts, data, "products-provide", "provide", "Id");
+  renderProducts(DataProducts, data, "products-relate", "type", "provide");
 };
 renderInfoProduct();
 
