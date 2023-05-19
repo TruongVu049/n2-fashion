@@ -1,4 +1,5 @@
 import { DataProducts } from "./data.js";
+import renderCart from "./modules/renderCartProduct.js";
 
 let $ = document.querySelector.bind(document);
 let $$ = document.querySelectorAll.bind(document);
@@ -9,48 +10,6 @@ const clearELMProducts = () => {
   shop_products_bottom.innerHTML = "";
 };
 // ========================== Clear ELM Products End ======================
-
-// ====================== Render Cart Start ==============================
-const renderCart = (infoProduct) => {
-  let shop_products_bottom = $(".shop-products-bottom .row");
-  if (!shop_products_bottom) return;
-
-  infoProduct = infoProduct
-    .map((cart) => {
-      return `
-    <div class="col-lg-4 col-md-4 col-sm-6">
-    <div class="shop-products-card">
-        <div class="products-card-thumb">
-            <img src="${cart.pd_image[0]}" alt="">
-        </div>
-        <div class="products-card-content">
-            <h4 class="provide">${cart.provide}</h4>
-            <h5 class="name">${cart.name}</h5>
-            <div class="ratings">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-            </div>
-            <span class="price">
-                <strong>${cart.price}</strong>
-                VNĐ
-            </span>
-            <div class="add-to-cart">
-                <button data-id="${cart.Id}" class="btn btn-sm">Thêm vào giỏ hàng</button>
-            </div>
-            <a href="thongtinsanpham.html?id=${cart.Id}"></a>
-        </div>
-    </div>
-</div>
-    `;
-    })
-    .join(" ");
-  shop_products_bottom.innerHTML = infoProduct;
-};
-
-// ====================== Render Cart End ==============================
 
 const getURLSearch = () => {
   let urlParams = new URLSearchParams(location.search);
@@ -419,33 +378,3 @@ const sortByPrice = () => {
   });
 };
 sortByPrice();
-
-// ========================== Sort By Price Start ======================================
-
-// =============================== Render Filter Tag Start ==============
-// const renderfilterTag = () => {
-//   let dataFilter = getSessionProducts("filtertag");
-//   if (!dataFilter) return;
-//   let filterApply = $(".filter-apply");
-//   let data = [...dataFilter["type"], ...dataFilter["sex"]];
-//   data = data.map((elm) => {
-//     if (elm == "pants") return "Quần";
-//     else if (elm == "t-shirt") return "Áo";
-//     else if (elm == "hat") return "Nón";
-//     else if (elm == "shoe") return "Giày";
-//     else if (elm == "male") return "Nam";
-//     else return "Nữ";
-//   });
-//   data = data
-//     .map((e) => {
-//       return `<div class="filter-apply-tag">
-//                 <span>${e}</span>
-//             </div>
-//     `;
-//     })
-//     .join(" ");
-//   filterApply.innerHTML += data;
-//   // removeSessionProducts("filtertag");
-// };
-// renderfilterTag();
-// =============================== Render Filter Tag End ==============
