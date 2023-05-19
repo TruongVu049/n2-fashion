@@ -1,4 +1,5 @@
-import { DataProducts } from "./data.js";
+import { DataProducts } from "./modules/cpm.js";
+
 let $ = document.querySelector.bind(document);
 let $$ = document.querySelectorAll.bind(document);
 // =================================== Render Start ========================================

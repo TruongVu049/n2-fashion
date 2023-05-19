@@ -8,7 +8,6 @@ const getURLSearch = () => {
   }
   return arr;
 };
-
 function renderHeader() {
   let header = document.querySelector("header");
   header.innerHTML = ` <!-- ================== Navbar ================== -->
@@ -51,9 +50,6 @@ function renderHeader() {
             </div>
         </div>
     </nav>
-
-    
-
     <!-- ==================== MOBILE MENU ================================= -->
     <div class="mobile-menu">
         <div class="overlay">
