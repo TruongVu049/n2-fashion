@@ -1,8 +1,9 @@
-import { DataProducts } from "./modules/cpm.js";
+import DataProducts from "./modules/data.js";
 let $ = document.querySelector.bind(document);
 let $$ = document.querySelectorAll.bind(document);
 
 // =========================== Find URL Start ==================================
+
 const findProduct = () => {
   let arr;
   let urlID = new URLSearchParams(location.search);

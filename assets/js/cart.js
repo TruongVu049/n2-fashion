@@ -1,4 +1,5 @@
-import { DataProducts, renderCart, getURLSearch } from "./modules/cpm.js";
+import DataProducts from "./modules/data.js";
+import renderCart from "./modules/cpm.js";
 
 let $ = document.querySelector.bind(document);
 let $$ = document.querySelectorAll.bind(document);
@@ -9,7 +10,16 @@ const clearELMProducts = () => {
   shop_products_bottom.innerHTML = "";
 };
 // ========================== Clear ELM Products End ======================
-
+const getURLSearch = () => {
+  let urlParams = new URLSearchParams(location.search);
+  let arr = {};
+  for (const [key, value] of urlParams) {
+    {
+      arr[key] = value;
+    }
+  }
+  return arr;
+};
 // ========================== Check Page Render Start =======================
 const checkPageRender = () => {
   let objURLSearch = getURLSearch();
