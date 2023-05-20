@@ -86,6 +86,7 @@ const slideShowTemp = () => {
   if (!imgs) return;
   let btnLeft = $(".direc-btn .direc-left");
   let btnRight = $(".direc-btn .direc-right");
+  if (!btnRight) return;
   setInterval(() => {
     if (tabIndex >= imgs.length - 1) tabIndex = 0;
     else tabIndex++;
