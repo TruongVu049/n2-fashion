@@ -85,57 +85,7 @@ function renderHeader() {
             <div class="inner-cart-top">
                 <h3>Giỏ Hàng</h3>
                 <div class="inner-cart-items">
-                    <div class="inner-items">
-                        <div>
-                            <a href="thongtinsanpham.html">
-                                <img src="https://cf.shopee.vn/file/vn-11134207-23030-fhot1hcfqwovf3_tn" alt="">
-                            </a>
-                        </div>
-                        <div>
-                            <h4>Brother Hoddies in Grey
-                                <a href="thongtinsanpham.html"></a>
-                            </h4>
-                            <strong>1.234.567</strong> VNĐ
-                        </div>
-                        <div>
-                            <i class="fa-solid fa-trash"></i>
-                        </div>
-                    </div>
-                    <div class="inner-items">
-                        <div>
-                            <a href="thongtinsanpham.html">
-                                <img src="https://down-vn.img.susercontent.com/file/8e8402f8e2aa2b8d1634bb9ec99e0f4b_tn"
-                                    alt="">
-                            </a>
-                        </div>
-                        <div>
-                            <h4>Brother Hoddies in Grey
-                                <a href="thongtinsanpham.html"></a>
-
-                            </h4>
-                            <strong>1.234.567</strong> VNĐ
-                        </div>
-                        <div>
-                            <i class="fa-solid fa-trash"></i>
-                        </div>
-                    </div>
-                    <div class="inner-items">
-                        <div>
-                            <a href="thongtinsanpham.html">
-                                <img src="https://down-vn.img.susercontent.com/file/6601dcdeba4fe51713c5d78635b6a826_tn"
-                                    alt="">
-                            </a>
-                        </div>
-                        <div>
-                            <h4>Brother Hoddies in Grey
-                                <a href="thongtinsanpham.html"></a>
-                            </h4>
-                            <strong>1.234.567</strong> VNĐ
-                        </div>
-                        <div>
-                            <i class="fa-solid fa-trash"></i>
-                        </div>
-                    </div>
+                    
                 </div>
 
             </div>

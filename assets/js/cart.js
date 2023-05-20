@@ -373,6 +373,17 @@ const sortByPrice = () => {
   if (!select) return;
   select.addEventListener("change", function () {
     getSortProducts(select.value);
+    removeLazyLoad();
   });
 };
 sortByPrice();
+
+function observerLoadImage(img) {
+  const url = img.getAttribute("data-src");
+  img.setAttribute("src", url);
+}
+
+function removeLazyLoad() {
+  let lazyImgs = document.querySelectorAll("[data-src]");
+  lazyImgs.forEach((item) => observerLoadImage(item));
+}

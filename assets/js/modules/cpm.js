@@ -1,3 +1,5 @@
+let $ = document.querySelector.bind(document);
+let $$ = document.querySelectorAll.bind(document);
 const renderCart = (listProduct) => {
   let shop_products_bottom = $(".shop-products-bottom .row");
   if (!shop_products_bottom) return;
@@ -8,7 +10,7 @@ const renderCart = (listProduct) => {
         <div class="col-lg-4 col-md-4 col-sm-6">
         <div class="shop-products-card">
             <div class="products-card-thumb">
-                <img src="${cart.pd_image[0]}" alt="">
+                <img src="assets/image/img_033-2.jfif" data-src="${cart.pd_image[0]}" alt="">
             </div>
             <div class="products-card-content">
                 <h4 class="provide">${cart.provide}</h4>
