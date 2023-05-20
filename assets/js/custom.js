@@ -134,7 +134,7 @@ function productsTab() {
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="shop-products-card">
                     <div class="products-card-thumb">
-                        <img src="assets/image/img_033-2.jfif" data-src="assets/image/img_024-1.jfif" alt="">
+                        <img src="assets/image/bg-while-lz.webp" data-src="assets/image/img_024-1.jfif" alt="">
                     </div>
                     <div class="products-card-content">
                         <h4 class="provide">canifa</h4>
@@ -160,7 +160,7 @@ function productsTab() {
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="shop-products-card">
                     <div class="products-card-thumb">
-                        <img src="assets/image/img_033-2.jfif" data-src="assets/image/img_025-1.jfif" alt="">
+                        <img src="assets/image/bg-while-lz.webp" data-src="assets/image/img_025-1.jfif" alt="">
                     </div>
                     <div class="products-card-content">
                         <h4 class="provide">canifa</h4>
@@ -187,7 +187,7 @@ function productsTab() {
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="shop-products-card">
                     <div class="products-card-thumb">
-                        <img src="assets/image/img_033-2.jfif" data-src="assets/image/img_026-1.jfif" alt="">
+                        <img src="assets/image/bg-while-lz.webp" data-src="assets/image/img_026-1.jfif" alt="">
                     </div>
                     <div class="products-card-content">
                         <h4 class="provide">canifa</h4>
@@ -227,7 +227,7 @@ function productsTab() {
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="shop-products-card">
                     <div class="products-card-thumb">
-                        <img src="assets/image/img_033-2.jfif" data-src="assets/image/img_028-1.jfif" alt="">
+                        <img src="assets/image/bg-while-lz.webp" data-src="assets/image/img_028-1.jfif" alt="">
                     </div>
                     <div class="products-card-content">
                         <h4 class="provide">adidas</h4>
@@ -253,7 +253,7 @@ function productsTab() {
             <div class="col-lg-4 col-md-4 col-sm-6">
         <div class="shop-products-card">
             <div class="products-card-thumb">
-                <img src="assets/image/img_033-2.jfif" data-src="assets/image/img_039-1.jfif" alt="">
+                <img src="assets/image/bg-while-lz.webp" data-src="assets/image/img_039-1.jfif" alt="">
             </div>
             <div class="products-card-content">
                 <h4 class="provide">converse</h4>
@@ -279,7 +279,7 @@ function productsTab() {
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="shop-products-card">
                     <div class="products-card-thumb">
-                        <img src="assets/image/img_033-2.jfif" data-src="assets/image/img_031-1.jfif" alt="">
+                        <img src="assets/image/bg-while-lz.webp" data-src="assets/image/img_031-1.jfif" alt="">
                     </div>
                     <div class="products-card-content">
                         <h4 class="provide">adidas</h4>

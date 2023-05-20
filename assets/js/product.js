@@ -32,7 +32,7 @@ const renderGallery = (data, element) => {
     .map((elm, index) => {
       if (index != 0) {
         return `<div>
-                 <img src="assets/image/img_033-2.jfif" data-src="${elm}" alt="image">
+                 <img src="assets/image/bg-while-lz.webp" data-src="${elm}" alt="image">
               </div>`;
       }
     })
@@ -58,7 +58,7 @@ const renderProducts = (datas, data, className, cd1, cd2) => {
       <div class="col-xl-3 col-bg-3 col-md-4 col-6">
         <div class="shop-products-card">
             <div class="products-card-thumb">
-                <img src="assets/image/img_033-2.jfif" data-src="${elm.pd_image[0]}" alt="">
+                <img src="assets/image/bg-while-lz.webp" data-src="${elm.pd_image[0]}" alt="">
             </div>
             <div class="products-card-content">
                 <h4 class="provide">${elm.provide}</h4>
@@ -94,11 +94,11 @@ const renderInfoProduct = () => {
   let productContent = $(".product-info-page .product-info-right");
   productImgs.innerHTML = `
     <div>
-      <img class="img-top" src="assets/image/img_033-2.jfif" data-src="${data.pd_image[0]}" alt="">
+      <img class="img-top" src="assets/image/bg-while-lz.webp" data-src="${data.pd_image[0]}" alt="">
     </div>
     <div class="img-gallary">
       <div>
-          <img class="active" src="assets/image/img_033-2.jfif" data-src="${data.pd_image[0]}" alt="image">
+          <img class="active" src="assets/image/bg-while-lz.webp" data-src="${data.pd_image[0]}" alt="image">
       </div>
       
     </div>
