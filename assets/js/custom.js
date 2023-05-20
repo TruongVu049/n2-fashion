@@ -72,33 +72,39 @@ openFilter_tm();
 
 // ============================= Banner SlideShow Start ================================================
 
-function slideShowBN() {
+const handleBanner = (tabIndex, imgs, animationName) => {
+  imgs.forEach((value) => {
+    if (value.classList.contains("active")) value.classList.remove("active");
+  });
+  imgs[tabIndex].classList.add("active");
+  imgs[tabIndex].style.animationName = animationName;
+};
+
+const slideShowTemp = () => {
   let tabIndex = 0;
   let imgs = $$(".banner-slideshow img");
   if (!imgs) return;
   let btnLeft = $(".direc-btn .direc-left");
   let btnRight = $(".direc-btn .direc-right");
-  if (!btnRight) return;
+  setInterval(() => {
+    if (tabIndex >= imgs.length - 1) tabIndex = 0;
+    else tabIndex++;
+    handleBanner(tabIndex, imgs, "fadeInRightImage");
+  }, 5000);
+
   btnRight.addEventListener("click", function (e) {
     tabIndex++;
-    imgs.forEach((value) => {
-      if (value.classList.contains("active")) value.classList.remove("active");
-    });
     if (tabIndex >= imgs.length) tabIndex = 0;
-    imgs[tabIndex].classList.add("active");
-    imgs[tabIndex].style.animationName = "fadeInRightImage";
+    handleBanner(tabIndex, imgs, "fadeInRightImage");
   });
   btnLeft.addEventListener("click", function (e) {
     tabIndex--;
-    imgs.forEach((value) => {
-      if (value.classList.contains("active")) value.classList.remove("active");
-    });
     if (tabIndex < 0) tabIndex = imgs.length - 1;
-    imgs[tabIndex].classList.add("active");
-    imgs[tabIndex].style.animationName = "fadeInLeftImage";
+    handleBanner(tabIndex, imgs, "fadeInLeftImage");
   });
-}
-slideShowBN();
+};
+
+slideShowTemp();
 
 // ============================= Banner SlideShow End ================================================
 

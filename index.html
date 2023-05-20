@@ -58,9 +58,9 @@
     <section>
         <div class="banner">
             <div class="banner-slideshow">
-                <img class="active" src="assets/image/banner/banner_bg-4.webp" alt="">
-                <img src="assets/image/banner/banner_bg-5.webp" alt="">
-                <img src="assets/image/banner/banner_bg-6.webp" alt="">
+                <img data-banner="0" class="active" src="assets/image/banner/banner_bg-4.webp" alt="">
+                <img data-banner="1" src="assets/image/banner/banner_bg-5.webp" alt="">
+                <img data-banner="2" src="assets/image/banner/banner_bg-6.webp" alt="">
             </div>
             <div class="btn-left-right">
                 <div class="direc-btn">
@@ -282,7 +282,6 @@
 
     <script src="assets/js/renderH_F.js"></script>
     <script src="assets/js/custom.js"></script>
-    <script type="module" src="assets/js/mn-cart.js"></script>
     <script type="module">
         import DataProducts from "./assets/js/modules/data.js"
         import renderCart from "./assets/js/modules/cpm.js"
@@ -298,6 +297,7 @@
         renderCart(arr);
     </script>
     <script src="assets/js/loading.js"></script>
+    <script type="module" src="assets/js/mn-cart.js"></script>
 </body>
 
 </html>

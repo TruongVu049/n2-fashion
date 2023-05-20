@@ -1620,6 +1620,7 @@ th {
     width: 100%;
     height: auto;
     object-fit: cover;
+
 }
 
 .banner .banner-slideshow img {
@@ -1633,6 +1634,9 @@ th {
 .banner .banner-slideshow img.active {
     display: block;
 }
+
+
+
 
 
 @keyframes fadeInLeftImage {
