@@ -1614,7 +1614,9 @@ th {
     transition: all 0ms ease 0s;
 }
 
-.banner .banner-slideshow {}
+.banner .banner-slideshow {
+    overflow: hidden;
+}
 
 .banner .banner-slideshow img {
     width: 100%;
