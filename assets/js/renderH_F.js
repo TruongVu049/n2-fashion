@@ -153,7 +153,7 @@ function rederFooter() {
         <div class="col-lg-3 col-sm-6">
             <div class="footer-nsx">
                 <div>
-                    <img src="https://sixdo.vn/images/banners/original/limited-time2x-1624335793.png" alt="">
+                    <img src="bg-footer-1.png" datasrc="bg-footer-1.png" alt="">
                 </div>
                 <h4>6 ngày đổi trả sản phẩm</h4>
                 <p>Đổi trả sản phẩm trong 6 ngày</p>
@@ -162,7 +162,7 @@ function rederFooter() {
         <div class="col-lg-3 col-sm-6">
             <div class="footer-nsx">
                 <div>
-                    <img src="https://sixdo.vn/images/banners/original/group-242x-1624335840.png" alt="">
+                    <img src="bg-footer-1.png" datasrc="bg-footer-2.png" alt="">
                 </div>
                 <h4>hotline 1000 1100</h4>
                 <p>8h00 - 21h00, T2 - CN nghỉ Tết Âm lịch</p>
@@ -171,7 +171,7 @@ function rederFooter() {
         <div class="col-lg-3 col-sm-6">
             <div class="footer-nsx">
                 <div>
-                    <img src="https://sixdo.vn/images/banners/original/group-262x-1624335863.png" alt="">
+                    <img src="bg-footer-1.png" datasrc="bg-footer-3.png" alt="">
                 </div>
                 <h4>hệ thống cửa hàng</h4>
                 <p>Gần 60 cửa hàng trên toàn hệ thống</p>
@@ -180,7 +180,7 @@ function rederFooter() {
         <div class="col-lg-3 col-sm-6">
             <div class="footer-nsx">
                 <div>
-                    <img src="https://sixdo.vn/images/banners/original/path-833-1623718758-1624336147.png"
+                    <img src="bg-footer-1.png" datasrc="bg-footer-4.png.png"
                         alt="">
                 </div>
                 <h4>VẬN CHUYỂN</h4>
@@ -239,7 +239,6 @@ function rederFooter() {
         </div>
     </div>
 </div>
-
 <div class="footer-bottom">
     <p>© 2023 by TLA.</p>
 </div>`;
