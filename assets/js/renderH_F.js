@@ -180,7 +180,7 @@ function rederFooter() {
         <div class="col-lg-3 col-sm-6">
             <div class="footer-nsx">
                 <div>
-                    <img src="assets/image/blog/bg-footer-1.png" data-src="assets/image/blog/bg-footer-4.png.png"
+                    <img src="assets/image/blog/bg-footer-1.png" data-src="assets/image/blog/bg-footer-4.png"
                         alt="">
                 </div>
                 <h4>VẬN CHUYỂN</h4>
