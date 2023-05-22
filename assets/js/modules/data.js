@@ -140,12 +140,7 @@ const DataProducts = [
     price: 2625000,
     pd_info:
       "Năng lượng kết hợp sự thoải mái trong đôi giày adidas Supernova+. Bất kể cự ly và tốc độ tập luyện, giày Supernova+ sẽ giúp bạn vươn tới mục tiêu. Giống như giày Supernova, đôi giày adidas này kết hợp đệm Boost và Bounce. Dấu cộng trong tên gọi của phiên bản này thể hiện lượng Boost tăng cường ở mũi giày so với giày Supernova, giúp tăng cường hoàn trả năng lượng và sự thoải mái trên từng sải bước. Trải nghiệm nguồn năng lượng dâng tràn từ buổi chạy đầy thoải mái.",
-    pd_image: [
-      "assets/image/img_029-1.jfif",
-      "assets/image/img_029-2.jfif",
-      "assets/image/img_029-3.jfif",
-      "assets/image/img_029-4.jfif",
-    ],
+    pd_image: ["assets/image/img_029-1.jfif", "assets/image/img_029-2.jfif"],
   },
   {
     Id: "030",
@@ -175,12 +170,7 @@ const DataProducts = [
     price: 3230000,
     pd_info:
       "Giày adidas Superstar đã trở thành biểu tượng trong suốt hơn 50 năm qua, từ sân bóng rổ đến văn hóa thường ngày. Phiên bản này có màu sắc tươi mới trên thân giày bằng da mượt mà nhưng vẫn giữ nguyên thiết kế mũi vỏ sò đặc trưng. Phối cùng chiếc quần nỉ yêu thích hoặc chiếc quần bó ôm sát để tạo nên phong cách biểu tượng với bản sắc của riêng bạn.",
-    pd_image: [
-      "assets/image/img_031-1.jfif",
-      "assets/image/img_031-2.jfif",
-      "assets/image/img_031-3.jfif",
-      "assets/image/img_031-4.jfif",
-    ],
+    pd_image: ["assets/image/img_031-1.jfif", "assets/image/img_031-2.jfif"],
   },
   {
     Id: "032",
@@ -385,7 +375,7 @@ const DataProducts = [
     ],
   },
   {
-    Id: "046",
+    Id: "045",
     name: "Áo T-Shirt NAM cổ tròn dáng suông TOKYOLIFE C7TSH515M",
     type: "t-shirt",
     sex: "male",
@@ -396,6 +386,58 @@ const DataProducts = [
     pd_info:
       "Áo T-shirt tại TokyoLife là sản phẩm được ưa chuộng trong mùa xuân hè. Với chị em phụ nữ, đây chắc chắn là món đồ không thể thiếu trong bộ sưu tập hè. Sản phẩm được làm từ chất liệu cotton mỏng nhẹ, thấm hút mồ hôi tốt. Áo thiết kế phom basic dáng suông dễ mặc, thoáng mát, thoải mái trong mọi hoạt động.",
     pd_image: ["assets/image/img_045-1.jfif", "assets/image/img_045-2.jfif"],
+  },
+  {
+    Id: "046",
+    name: "Nón Bucket stussy che nắng dạng xô thời trang đi biển mùa hè cho Nam Mũ",
+    type: "hat",
+    sex: "male",
+    provide: "95yang",
+    color: ["đen", "nâu"],
+    size: [],
+    price: 207900,
+    pd_info:
+      "Sản phẩm mới 100%, chất lượng cao. Bao bì: Bao bì đơn giản Kích thước mũ khoảng: 56-60cm, (Có thể điều chỉnh), phù hợp với hầu hết mọi người",
+    pd_image: ["assets/image/img_046-1.jfif", "assets/image/img_046-2.jfif"],
+  },
+  {
+    Id: "047",
+    name: "Nón kết, Mũ lưỡi trai LA nhung xanh cao cấp cho nữ - M129",
+    type: "hat",
+    sex: "female",
+    provide: "zerdio",
+    color: [],
+    size: [],
+    price: 250000,
+    pd_info:
+      "ZERDIO là shop Freeship Extra nên đối với các đơn hàng >50K quý khách sẽ được hỗ trợ phí vận chuyển. Quý khách đừng quên sử dụng mã miễn phí vận chuyển để được giảm phí nha!",
+    pd_image: ["assets/image/img_047-1.jfif", "assets/image/img_047-2.jfif"],
+  },
+  {
+    Id: "048",
+    name: "Giày Thể Thao Nữ MEELY Fashion Kiểu Sneaker Dáng Trơn M&0 MK39",
+    type: "shoe",
+    sex: "female",
+    provide: "zerdio",
+    color: [],
+    size: [35, 36, 37],
+    price: 280000,
+    pd_info:
+      "Kiểu dáng: Giày thể thao nữ / Sneaker Nữ / Giày Thể Thao Nữ Đế Bằng . Chất liệu: Vật liệu tổng hợp",
+    pd_image: ["assets/image/img_048-1.jfif", "assets/image/img_048-2.jfif"],
+  },
+  {
+    Id: "049",
+    name: "Áo Cardigan Thêu Logo THEL - Trắng",
+    type: "t-shirt",
+    sex: "female",
+    provide: "zerdio",
+    color: ["trắng"],
+    size: ["M", "L"],
+    price: 349000,
+    pd_info:
+      "Miễn phí đổi hàng cho khách mua ở THEL® trong trường hợp bị lỗi từ nhà sản xuất, giao nhầm hàng, nhầm size.",
+    pd_image: ["assets/image/img_049-1.jfif", "assets/image/img_049-2.jfif"],
   },
 ];
 
