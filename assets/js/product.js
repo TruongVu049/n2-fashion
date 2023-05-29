@@ -1,4 +1,10 @@
-import DataProducts from "./modules/data.js";
+import getDataFromDB from "./modules/data.js";
+const getSessionProducts = (name) => {
+  return JSON.parse(sessionStorage.getItem(name));
+};
+getDataFromDB();
+const DataProducts = getSessionProducts("listproductBD");
+console.log(DataProducts);
 let $ = document.querySelector.bind(document);
 let $$ = document.querySelectorAll.bind(document);
 
@@ -75,9 +81,9 @@ const renderProducts = (datas, data, className, cd1, cd2) => {
                     VNĐ
                 </span>
                 <div class="add-to-cart">
-                    <button data-id="${elm.Id}" class="btn btn-sm">Thêm vào giỏ hàng</button>
+                    <button data-id="${elm.id}" class="btn btn-sm">Thêm vào giỏ hàng</button>
                 </div>
-                <a href="thongtinsanpham.html?id=${elm.Id}"></a>
+                <a href="thongtinsanpham?id=${elm.id}"></a>
             </div>
           </div>
       </div>
@@ -148,7 +154,7 @@ const renderInfoProduct = () => {
     <div class="btn-list">
         <button data-id="${data.Id}" class="btn btn-sm">Thêm vào giỏ hàng</button>
         <button class="btn btn-m">Mua hàng
-          <a href="gio-hang.html"></a>
+          <a href="gio-hang"></a>
         </button>
     </div>
   `;

@@ -1,6 +1,12 @@
-import DataProducts from "./modules/data.js";
 import renderCart from "./modules/cpm.js";
+import getDataFromDB from "./modules/data.js";
+const getSessionProducts = (name) => {
+  return JSON.parse(sessionStorage.getItem(name));
+};
+getDataFromDB();
+const DataProducts = getSessionProducts("listproductBD");
 
+//
 let $ = document.querySelector.bind(document);
 let $$ = document.querySelectorAll.bind(document);
 
@@ -200,7 +206,7 @@ const filterSubmit = () => {
       clearELMProducts();
       setSessionProducts(dataPB);
       // let listA = $$(".pv-container-items > div > a");
-      location.href = `sanpham.html?page=${typePage}&indexstart=0&indexend=6&currentpage=1`;
+      location.href = `sanpham?page=${typePage}&indexstart=0&indexend=6&currentpage=1`;
     });
   }
 };
@@ -222,10 +228,6 @@ checkPageFilter();
 
 const setSessionProducts = (listproduct) => {
   sessionStorage.setItem("listproduct", JSON.stringify(listproduct));
-};
-
-const getSessionProducts = (name) => {
-  return JSON.parse(sessionStorage.getItem(name));
 };
 
 const removeSessionProducts = (name) => {
@@ -258,7 +260,7 @@ const renderTagAPavination = (obj) => {
     .map((elm, index) => {
       return `
       <div>
-          <a class="" href="sanpham.html?page=${checkPageRender()}&indexstart=${
+          <a class="" href="sanpham?page=${checkPageRender()}&indexstart=${
         elm.start
       }&indexend=${elm.end}&currentpage=${index + 1}" data-start="${
         elm.start

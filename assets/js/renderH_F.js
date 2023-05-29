@@ -15,25 +15,25 @@ function renderHeader() {
         <div class="container">
             <div class="navbar-sticky">
                 <div class="navbar-left" style="margin-bottom: 10px;">
-                    <a href="index.html">
+                    <a href="index">
                         <img style="" src="assets/favicon/logo-s.png" alt="logo">
                     </a>
                 </div>
                 <div class="navbar-center">
                     <ul>
-                        <li><a href="index.html">trang chủ</a></li>
-                        <li><a href="sanpham.html?page=all">sản phẩm</a></li>
-                        <li><a href="sanpham.html?page=male">nam</a></li>
-                        <li><a href="sanpham.html?page=female">nữ</a></li>
-                        <li><a href="blog.html">blog</a></li>
-                        <li><a href="lienhe.html">liên hệ</a></li>
+                        <li><a href="index">trang chủ</a></li>
+                        <li><a href="sanpham?page=all">sản phẩm</a></li>
+                        <li><a href="sanpham?page=male">nam</a></li>
+                        <li><a href="sanpham?page=female">nữ</a></li>
+                        <li><a href="blog">blog</a></li>
+                        <li><a href="lienhe">liên hệ</a></li>
                     </ul>
                 </div>
                 <div class="navbar-right">
                     <a id="id-search" href="javascript:void(0)" class="header-action search">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
-                    <a href="login.html" class="header-action user">
+                    <a href="login" class="header-action user">
                         <span class="check-user"></span>
                         <i class="fa-regular fa-user"></i>
                     </a>
@@ -62,12 +62,12 @@ function renderHeader() {
 
             <div class="mobile-menu-links navbar-center">
                 <ul>
-                    <li><a href="index.html">trang chủ</a></li>
-                    <li><a href="sanpham.html?page=all">sản phẩm</a></li>
-                    <li><a href="sanpham.html?page=male">nam</a></li>
-                    <li><a href="sanpham.html?page=female">nữ</a></li>
-                    <li><a href="blog.html">blog</a></li>
-                    <li><a href="lienhe.html">liên hệ</a></li>
+                    <li><a href="index">trang chủ</a></li>
+                    <li><a href="sanpham?page=all">sản phẩm</a></li>
+                    <li><a href="sanpham?page=male">nam</a></li>
+                    <li><a href="sanpham?page=female">nữ</a></li>
+                    <li><a href="blog">blog</a></li>
+                    <li><a href="lienhe">liên hệ</a></li>
                 </ul>
             </div>
         </div>
@@ -97,11 +97,11 @@ function renderHeader() {
                     </strong>
                 </div>
                 <button class="btn view-">
-                    <a href="gio-hang.html"></a>
+                    <a href="gio-hang"></a>
                     XEM GIỎ HÀNG
                 </button>
                 <button class="btn shopnow-cart">
-                    <a href="thanh-toan.html"></a>
+                    <a href="thanh-toan"></a>
                     MUA HÀNG
                 </button>
             </div>

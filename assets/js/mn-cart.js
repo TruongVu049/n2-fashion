@@ -1,5 +1,9 @@
-import DataProducts from "./modules/data.js";
-
+import getDataFromDB from "./modules/data.js";
+const getSessionProducts = (name) => {
+  return JSON.parse(sessionStorage.getItem(name));
+};
+getDataFromDB();
+const DataProducts = getSessionProducts("listproductBD");
 let $ = document.querySelector.bind(document);
 let $$ = document.querySelectorAll.bind(document);
 // =================================== Render Start ========================================
@@ -11,13 +15,13 @@ const renderMnCart = (data) => {
       return `
             <div class="inner-items">
             <div>
-                <a href="thongtinsanpham.html?id=${elm.Id}">
+                <a href="thongtinsanpham?id=${elm.Id}">
                     <img src="${elm.pd_image[0]}" alt="">
                 </a>
             </div>
             <div>
                 <h4>${elm.name}
-                    <a href="thongtinsanpham.html?id=${elm.Id}"></a>
+                    <a href="thongtinsanpham?id=${elm.Id}"></a>
                 </h4>
                 <strong>${elm.price}</strong> VNĐ
             </div>
@@ -223,7 +227,7 @@ const checkPrice = () => {
   submit.addEventListener("click", function () {
     if (payTotal.innerHTML === "0") alert("Không có sản phẩm trong giỏ hàng");
     else {
-      location.href = "thanh-toan.html";
+      location.href = "thanh-toan";
     }
   });
 };
