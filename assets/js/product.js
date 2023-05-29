@@ -1,10 +1,4 @@
-import getDataFromDB from "./modules/data.js";
-const getSessionProducts = (name) => {
-  return JSON.parse(sessionStorage.getItem(name));
-};
-getDataFromDB();
-const DataProducts = getSessionProducts("listproductBD");
-console.log(DataProducts);
+import DataProducts from "./modules/data.js";
 let $ = document.querySelector.bind(document);
 let $$ = document.querySelectorAll.bind(document);
 
@@ -81,9 +75,9 @@ const renderProducts = (datas, data, className, cd1, cd2) => {
                     VNĐ
                 </span>
                 <div class="add-to-cart">
-                    <button data-id="${elm.id}" class="btn btn-sm">Thêm vào giỏ hàng</button>
+                    <button data-id="${elm.Id}" class="btn btn-sm">Thêm vào giỏ hàng</button>
                 </div>
-                <a href="thongtinsanpham?id=${elm.id}"></a>
+                <a href="thongtinsanpham.html?id=${elm.Id}"></a>
             </div>
           </div>
       </div>
@@ -143,7 +137,7 @@ const renderInfoProduct = () => {
                 <i class="fa-solid fa-minus"></i>
             </div>
             <div>
-                <strong data-value="1">1</strong>
+                <strong class="pr_sl" data-value="1">1</strong>
             </div>
             <div class="couter-product-plug">
                 <i class="fa-solid fa-plus"></i>
@@ -154,7 +148,7 @@ const renderInfoProduct = () => {
     <div class="btn-list">
         <button data-id="${data.Id}" class="btn btn-sm">Thêm vào giỏ hàng</button>
         <button class="btn btn-m">Mua hàng
-          <a href="gio-hang"></a>
+          <a href="gio-hang.html"></a>
         </button>
     </div>
   `;
@@ -253,11 +247,10 @@ const handleColor = () => {
 handleColor();
 
 const couterProduct = () => {
+  let innerValue = $(".couter-product .pr_sl");
   let decrease = $(".couter-product-minus");
   let increase = $(".couter-product-plug");
-  let innerValue = $(".product-info-right .couter .couter-product strong");
-
-  let couter = 1;
+  let couter = parseInt(innerValue.dataset.value);
   decrease.addEventListener("click", function () {
     if (innerValue.innerHTML == "1") return;
     innerValue.innerHTML = --couter;

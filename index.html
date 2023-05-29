@@ -89,7 +89,7 @@
                                 <div class="small-banner-content">
                                     <h4 class="sub-title">Nón</h4>
                                     <h3 class="title">Giảm giá <br>20%</h3>
-                                    <a href="sanpham?page=all" class="btn btn-m">Mua Ngay</a>
+                                    <a href="sanpham.html?page=all" class="btn btn-m">Mua Ngay</a>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +103,7 @@
                                 <div class="small-banner-content">
                                     <h4 class="sub-title">Canifa</h4>
                                     <h3 class="title">Mua 1 tặng 1</h3>
-                                    <a href="sanpham?page=all" class="btn btn-m">Mua Ngay</a>
+                                    <a href="sanpham.html?page=all" class="btn btn-m">Mua Ngay</a>
                                 </div>
                             </div>
                         </div>
@@ -117,7 +117,7 @@
                                 <div class="small-banner-content">
                                     <h4 class="sub-title">Đồ nữ</h4>
                                     <h3 class="title">Giảm giá <br>10%</h3>
-                                    <a href="sanpham?page=female" class="btn btn-m">Mua Ngay</a>
+                                    <a href="sanpham.html?page=female" class="btn btn-m">Mua Ngay</a>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +163,7 @@
                                         <div class="add-to-cart">
                                             <button data-id="024" class="btn btn-sm">Thêm vào giỏ hàng</button>
                                         </div>
-                                        <a href="thongtinsanpham?id=024"></a>
+                                        <a href="thongtinsanpham.html?id=024"></a>
                                     </div>
                                 </div>
                             </div>
@@ -191,7 +191,7 @@
                                         <div class="add-to-cart">
                                             <button data-id="025" class="btn btn-sm">Thêm vào giỏ hàng</button>
                                         </div>
-                                        <a href="thongtinsanpham?id=025"></a>
+                                        <a href="thongtinsanpham.html?id=025"></a>
                                     </div>
                                 </div>
                             </div>
@@ -219,7 +219,7 @@
                                         <div class="add-to-cart">
                                             <button data-id="026" class="btn btn-sm">Thêm vào giỏ hàng</button>
                                         </div>
-                                        <a href="thongtinsanpham?id=026"></a>
+                                        <a href="thongtinsanpham.html?id=026"></a>
                                     </div>
                                 </div>
                             </div>
@@ -238,7 +238,7 @@
                     <div class="col-12">
                         <div class="section1-bg">
                             <div class="section1-bg-image">
-                                <a href="sanpham?page=all"><img src="assets/image/banner/banner_bg-1.webp"
+                                <a href="sanpham.html?page=all"><img src="assets/image/banner/banner_bg-1.webp"
                                         alt="Banner"></a>
                             </div>
                         </div>
@@ -285,14 +285,9 @@
 
     <script src="assets/js/renderH_F.js"></script>
     <script src="assets/js/custom.js"></script>
-    <!-- <script type="module">
-        import renderCart from "./assets/js/modules/cpm.js";
-        import getDataFromDB from "./assets/js/modules/data.js";
-        const getSessionProducts = (name) => {
-            return JSON.parse(sessionStorage.getItem(name));
-        };
-        getDataFromDB();
-        const DataProducts = getSessionProducts("listproductBD");
+    <script type="module">
+        import DataProducts from "./assets/js/modules/data.js"
+        import renderCart from "./assets/js/modules/cpm.js"
         let arr = new Array(6);
         let i = 0;
         while (i < arr.length) {
@@ -303,7 +298,7 @@
             }
         }
         renderCart(arr);
-    </script> -->
+    </script>
     <script src="assets/js/loading.js"></script>
     <script type="module" src="assets/js/mn-cart.js"></script>
 </body>

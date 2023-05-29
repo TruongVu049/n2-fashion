@@ -127,7 +127,7 @@ function productsTab() {
     [
       "tab1",
       {
-        url: "index#sanphammoi",
+        url: "index.html#sanphammoi",
         content: `
         <div class="container">
         <div class="row">
@@ -153,7 +153,7 @@ function productsTab() {
                         <div class="add-to-cart">
                             <button data-id="024" class="btn btn-sm">Thêm vào giỏ hàng</button>
                         </div>
-                        <a href="thongtinsanpham?id=024"></a>
+                        <a href="thongtinsanpham.html?id=024"></a>
                     </div>
                 </div>
             </div>
@@ -180,7 +180,7 @@ function productsTab() {
                         <div class="add-to-cart">
                             <button data-id="025" class="btn btn-sm">Thêm vào giỏ hàng</button>
                         </div>
-                        <a href="thongtinsanpham?id=025"></a>
+                        <a href="thongtinsanpham.html?id=025"></a>
                     </div>
                 </div>
             </div>
@@ -207,7 +207,7 @@ function productsTab() {
                         <div class="add-to-cart">
                             <button data-id="026" class="btn btn-sm">Thêm vào giỏ hàng</button>
                         </div>
-                        <a href="thongtinsanpham?id=026"></a>
+                        <a href="thongtinsanpham.html?id=026"></a>
                     </div>
                 </div>
             </div>
@@ -220,7 +220,7 @@ function productsTab() {
     [
       "tab2",
       {
-        url: "index#muanhieu",
+        url: "index.html#muanhieu",
         content: `
         <div class="container">
         <div class="row">
@@ -246,7 +246,7 @@ function productsTab() {
                         <div class="add-to-cart">
                             <button data-id="028" class="btn btn-sm">Thêm vào giỏ hàng</button>
                         </div>
-                        <a href="thongtinsanpham?id=028"></a>
+                        <a href="thongtinsanpham.html?id=028"></a>
                     </div>
                 </div>
             </div>
@@ -272,7 +272,7 @@ function productsTab() {
                 <div class="add-to-cart">
                     <button data-id="039" class="btn btn-sm">Thêm vào giỏ hàng</button>
                 </div>
-                <a href="thongtinsanpham?id=039"></a>
+                <a href="thongtinsanpham.html?id=039"></a>
             </div>
         </div>
     </div>
@@ -298,7 +298,7 @@ function productsTab() {
                         <div class="add-to-cart">
                             <button data-id="031" class="btn btn-sm">Thêm vào giỏ hàng</button>
                         </div>
-                        <a href="thongtinsanpham?id=031"></a>
+                        <a href="thongtinsanpham.html?id=031"></a>
                     </div>
                 </div>
             </div>
@@ -310,7 +310,7 @@ function productsTab() {
     [
       "tab3",
       {
-        url: "index#sale",
+        url: "index.html#sale",
         content: ``,
       },
     ],
@@ -354,7 +354,7 @@ productsTab();
 // =============================== Products Tab End =============================
 function dealsTimeDown() {
   // Set the date we're counting down to
-  var countDownDate = new Date("May 24, 2023 16:59:25").getTime();
+  var countDownDate = new Date("May 31, 2023 16:59:25").getTime();
 
   // Update the count down every 1 second
   var x = setInterval(function () {
@@ -411,7 +411,7 @@ function checkInputSearch(inputSearch) {
     alert("Vui lòng điền nội dung vào ô tìm kiếm");
   } else {
     let data = inputSearch.value.trim().toLowerCase();
-    location.href = `sanpham?res=${data}`;
+    location.href = `sanpham.html?res=${data}`;
   }
 }
 function handleSearch() {

@@ -1,9 +1,5 @@
-import getDataFromDB from "./modules/data.js";
-const getSessionProducts = (name) => {
-  return JSON.parse(sessionStorage.getItem(name));
-};
-getDataFromDB();
-const DataProducts = getSessionProducts("listproductBD");
+import DataProducts from "./modules/data.js";
+
 let $ = document.querySelector.bind(document);
 let $$ = document.querySelectorAll.bind(document);
 // =================================== Render Start ========================================
@@ -15,15 +11,20 @@ const renderMnCart = (data) => {
       return `
             <div class="inner-items">
             <div>
-                <a href="thongtinsanpham?id=${elm.Id}">
+                <a href="thongtinsanpham.html?id=${elm.Id}">
                     <img src="${elm.pd_image[0]}" alt="">
                 </a>
             </div>
             <div>
                 <h4>${elm.name}
-                    <a href="thongtinsanpham?id=${elm.Id}"></a>
+                    <a href="thongtinsanpham.html?id=${elm.Id}"></a>
                 </h4>
-                <strong>${elm.price}</strong> VNĐ
+                <div style="display: flex; justify-content: space-between;  class="price-sl">
+                  <strong>${elm.price}
+                    <span style="color: #2e2e2e;">VNĐ</span>
+                  </strong> 
+                  <span data-value="${elm.SL}" style="font-weight: 600;">x${elm.SL}</span>
+                </div>
             </div>
             <div>
                 <i data-id="${elm.Id}" class="fa-solid fa-trash remove-item"></i>
@@ -72,28 +73,32 @@ const renderTableCart = (data) => {
           </td>
           <td>
               <div>
-                  <div class="couter-product">
-                      <div class="couter-product-minus">
-                          <i class="fa-solid fa-minus"></i>
-                      </div>
-                      <div>
-                          <strong>1</strong>
-                      </div>
-                      <div class="couter-product-plug">
-                          <i class="fa-solid fa-plus"></i>
-                      </div>
+                <div class="couter-product">
+                  <div class="couter-product-minus">
+                      <i class="fa-solid fa-minus"></i>
                   </div>
+                  <div>
+                      <strong class="pr_sl" data-value="${elm.SL}">${
+        elm.SL
+      }</strong>
+                  </div>
+                  <div class="couter-product-plug">
+                      <i class="fa-solid fa-plus"></i>
+                  </div>
+                </div>
               </div>
           </td>
           <td>
               <div>
-                  <strong>${elm.price}</strong>
+                  <strong>${elm.price * elm.SL}</strong>
                   VNĐ
               </div>
           </td>
           <td>
               <div>
-                  <i data-id="${elm.Id}" class="fa-regular fa-trash-can remove-item"></i>
+                  <i data-id="${
+                    elm.Id
+                  }" class="fa-regular fa-trash-can remove-item"></i>
               </div>
           </td>
       </tr>
@@ -122,7 +127,7 @@ const renderPay = (data) => {
   let sum = 0;
   let arr = data
     .map((elm) => {
-      sum += elm.price;
+      sum += elm.price * elm.SL;
       return `
       <li class="li-product">
       <div>
@@ -163,12 +168,23 @@ renderAmount();
 // =============================
 
 const addLocalStorage = (id) => {
+  let sl = $(".pr_sl");
+  let sm = "1";
+  if (sl != null);
+  {
+    if (sl) {
+      sm = sl.dataset.value;
+    }
+  }
+
   let data = DataProducts.filter((elm) => {
     if (elm.Id == id) {
       return elm;
     }
   });
   let dataOb = data[0];
+  dataOb.SL = sm;
+
   localStorage.setItem(data[0].Id, JSON.stringify(dataOb));
 };
 
@@ -196,6 +212,7 @@ initLS();
 let btn = $("body");
 btn.addEventListener("click", function (e) {
   if (e.target.classList.contains("btn-sm")) {
+    console.log(e.target);
     addLocalStorage(e.target.dataset.id);
     renderMnCart(getDataLc());
     renderTableCart(getDataLc());
@@ -227,7 +244,7 @@ const checkPrice = () => {
   submit.addEventListener("click", function () {
     if (payTotal.innerHTML === "0") alert("Không có sản phẩm trong giỏ hàng");
     else {
-      location.href = "thanh-toan";
+      location.href = "thanh-toan.html";
     }
   });
 };
